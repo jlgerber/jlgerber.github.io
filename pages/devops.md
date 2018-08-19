@@ -40,11 +40,6 @@ isolate a process and allow it to speak to other processes via secure means.
 - [Docker](devops/docker.md)
 - [Docker Swarm](devops/docker-swarm-mode.md)
 
-#### Systems Unix Commands
-Ok. So these are a few of my favorite things
-
-- [netstat](devops/netstat.md) - Network Statistics.
-- [arp](devops/arp.md) - Interogate network table.
-- [Disk Commands](devops/linux-disk.md) - Various commands to work with logical and physical devices.
-
-
+#### Elasticsearch
+- [intro](devops/elastic_search/elasticsearch_intro.md)
+- [clusters](devops/elastic_search/clusters.md)
