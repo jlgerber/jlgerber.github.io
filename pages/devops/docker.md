@@ -1,5 +1,7 @@
 ### Docker Commands
 
+---
+
   command | description
   --- | ---
   run   |  run a container
@@ -13,6 +15,8 @@
   stop   |   stop a running container process
 
 #### run ( run a container with an optional command )
+
+---
 
 run a command using a container. If you don't specify a command to run,
 it will use the default command specified on the docker image.
@@ -44,6 +48,8 @@ containers are doing.
   -f  | attach to log. like using tail.
 
 #### commit ( create a container image )
+
+---
 
 ##### Syntax
 
@@ -125,16 +131,18 @@ docker images
 docker
 ```
 
-tag ( rename a local image repository before pushing it to docker hub )
------------------------------------------------------------------------
+### tag ( rename a local image repository before pushing it to docker hub )
+
+---
 
 ##### syntax
 
 docker tag \[image ID\] \[repo:tag\] docker tag \[local repo:tag\]
 \[Docker Hum repo:tag\]
 
-inspect ( display all the details about a container )
------------------------------------------------------
+### inspect ( display all the details about a container )
+
+---
 
 -   Outputs details in JSON array
 -   Use grep to find a specific property
@@ -147,11 +155,11 @@ docker inspect &lt;Container name | ID&gt;
 
 ###### --format
 
-containers
-==========
+### containers
 
-Container Commands
-------------------
+---
+
+#### Container Commands
 
 ##### Exiting container without killing it
 
@@ -161,8 +169,9 @@ Container Commands
 
 ###### Type Exit
 
-Container properties
---------------------
+### Container properties
+
+---
 
 ##### container id
 
@@ -178,15 +187,17 @@ Container properties
 
 ###### if you don't specify a name, docker will specify one for you.
 
-Container processes
--------------------
+### Container processes
+
+---
 
 -   a container only runs as long as the process from your specified
     docker run command is running
 -   your command's process is always PID 1 inside the container
 
-Container images
-----------------
+### Container images
+
+---
 
 a container image is made up of image layers
 
@@ -214,22 +225,16 @@ the lowest or root image
 
 images are created using the
 
-Dockerfile
-==========
+### Dockerfile
 
-Configuration file that contains instructions for building a docker
+---
+
+- Configuration file that contains instructions for building a docker
 image.
-
-Provides a more effective way to build images compared to using `docker commit`
--------------------------------------------------------------------------------
-
-Easily fits into continuous integration and deployment process
---------------------------------------------------------------
-
-comprised of INSTRUCTIONS
--------------------------
-
-specify what to do when building the image
+- Provides a more effective way to build images compared to using `docker commit`
+- Easily fits into continuous integration and deployment process
+- comprised of INSTRUCTIONS
+- specify what to do when building the image
 
 ##### Example Dockerfile
 
@@ -266,11 +271,13 @@ openjdk=7-jdk
 
 ###### Shell format cmd args
 
-CMD ping 127.0.0. -c 30
+    CMD ping 127.0.0. -c 30
 
 ###### Exec Format CMD \["CMD",args...\]
 
-CMD \["ping","127.0.0.1", "-c", "30"\]
+
+    CMD \["ping","127.0.0.1", "-c", "30"\]
+
 
 ##### ENTRYPIONT instruction
 
@@ -298,37 +305,39 @@ EXPOSE 80 443
 CMD["nginx", "-g", "daemon off;"]
 ```
 
-Docker Build with Dockerfile
-----------------------------
+### Docker Build with Dockerfile
+
+---
 
 ##### Syntax
 
-docker build \[options\] \[path\]
+    docker build \[options\] \[path\]
 
 ##### Docker searches for the Dockerfile in the root of the context.
 
-\${path}/Dockerfile
+    \${path}/Dockerfile
 
 ##### Tag the build (-t)
 
-docker build -t \[repository:tag\] \[path\]
+    docker build -t \[repository:tag\] \[path\]
 
 ###### Examples
 
 ####### Build an image using the current folder as the context path. Put image in jgerber/myimage repository and tag it as 1.0
 
-docker build -t jgerber/myimage:1.0 .
+    docker build -t jgerber/myimage:1.0 .
 
 ####### As above but use the myproject folder in as the context path
 
-docker build -t jgerber/myimage:1.0 myproject
+    docker build -t jgerber/myimage:1.0 myproject
 
 ##### Specify a different dockerfile (-f)
 
 Tell docker to search for a different dockerfile name
 
-Building an image from a Dockerfile
------------------------------------
+### Building an image from a Dockerfile
+
+---
 
 ##### create a directory to house the Dockerfile
 
@@ -341,13 +350,15 @@ RUN apt-get update && apt-get install -y curl vim
 
 ##### run docker build
 
-docker build -t jgerber/testimage:1.0 .
+    docker build -t jgerber/testimage:1.0 .
 
-Managing Images and Containers
-==============================
+### Managing Images and Containers
 
-Start and Stop Containers
--------------------------
+---
+
+#### Start and Stop Containers
+
+---
 
 ##### docker start &lt;container ID&gt;
 
@@ -372,8 +383,9 @@ docker ps
 docker stop a23235s
 ```
 
-Volumes
-=======
+### Volumes
+
+---
 
 A volume is a designmated directory in a container designed to persist
 data independent of a container's life cycle.
@@ -383,8 +395,7 @@ data independent of a container's life cycle.
 -   Can be mapped to a host folder
 -   Can be shared between containers
 
-Mount a Volume
---------------
+#### Mount a Volume
 
 -   Volumes are mounted when creating or executing a container
 -   Can be mapped to ahost directory
@@ -404,8 +415,7 @@ docker run -d -P -v /myvolume nginx:1.7
 docker run -i -t -v /data/src:/test/src nginx:1.7
 ```
 
-Volumes in Dockerfile
----------------------
+#### Volumes in Dockerfile
 
 -   VOLUME instruction creates a mount point
 -   Can specify arguments JSON array or string
@@ -430,8 +440,7 @@ VOLUME /www/website1.com /www/website2.com
 VOLUME ["myvol", "myvol2"]
 ```
 
-What are volumes for?
----------------------
+#### What are volumes for?
 
 -   decouple data that is stored from the container which created the
     data
@@ -442,11 +451,12 @@ What are volumes for?
     has issues because you are directly binding to a real host. ( might
     be fine for us because we control our environment )
 
-Container networking basics
-===========================
+### Container networking basics
 
-Mapping ports
--------------
+---
+
+#### Mapping ports
+
 
 -   Containers have their own network stack. ie their own IP address
 -   Maps exposed container ports to ports on the host machine
@@ -462,8 +472,9 @@ Map port 80 on the container to 8080 on the host
 docker run -d -p 8080:80 nginx:1.7
 ```
 
-Linking Containers
-------------------
+#### Linking Containers
+
+---
 
 Linking is a communication method between containers which allows them
 to securely transfer data from one to another
@@ -501,11 +512,12 @@ docker run -d -P --name website --link database:db nginx
     -   COntainer with MySQL running
     -   Application on Tomcat needs to connect to MySQL
 
-Administration
-==============
+### Administration
 
-Troubleshooting Containers
---------------------------
+---
+
+#### Troubleshooting Containers
+
 
 ##### If your container shuts down unexpectedly, it may be because the applicaiton your container was running has crashed.
 
@@ -611,8 +623,9 @@ logging levels.
 
 \###+end~example~ Then run docker as a service
 
-Overview of Security Practices
-------------------------------
+#### Overview of Security Practices
+
+---
 
 ##### Linux containers and security
 
@@ -645,8 +658,9 @@ Overview of Security Practices
 -   <http://docs.docker.com/articles/security/>
 -   <http://www.slideshare.net/jpetazzo/docker-linux-containers-lxc-and-security>
 
-Private Registry
-----------------
+#### Private Registry
+
+---
 
 -   Allows you to run your own registry instead of using Docker Hub
 -   Multiple options
@@ -725,21 +739,23 @@ docker pull 192.168.1.3:5000/mypostgres:1.0
 -   modify DOCKER~OPS~ option and add --insecure-registry
     &lt;ipaddress&gt;:&lt;port num&gt;
 
-check images in registry
-------------------------
+### check images in registry
+
+---
 
 ##### use curl
 
 curl -v -X GET <http://localhost:5000/v2/postgres/tags/list>
 
-Further Resources
------------------
+#### Further Resources
+
 
 -   <https://github.com/docker/distribution>
 -   <https://docs.docker.com/registry/overview/>
 
-Orchistration Tools
-===================
+### Orchistration Tools
+
+---
 
 Intro to Docker Machine
 -----------------------
