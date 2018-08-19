@@ -1,3 +1,10 @@
+---
+layout: page
+title: Emacs
+tagline: The shit
+description: Best editor ever made (sorry vi)
+---
+
 Hotkeys
 =======
 

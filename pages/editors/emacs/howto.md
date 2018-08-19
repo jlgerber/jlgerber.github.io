@@ -1,3 +1,10 @@
+---
+layout: page
+title: Howto
+tagline: Learn some new stuff
+description: Emacs extended chords
+---
+
 Formats
 =======
 
@@ -33,7 +40,7 @@ Org ( emacs mode )
 ##### Bulk Conversion
 
 ``` {.shell}
- find . -name \*.txt -type f -exec pandoc  -f markdown -t org -o {}.org {} \; 
+ find . -name \*.txt -type f -exec pandoc  -f markdown -t org -o {}.org {} \;
 ```
 
 Shell Foo

@@ -1,3 +1,10 @@
+---
+layout: page
+title: Org Mode
+tagline: Best foldy mode ever
+description: Ugly but good.
+---
+
 Org Mode Basic Usage
 ====================
 
@@ -104,7 +111,7 @@ Links warran an entire episode bug
 -   [Comidia](elisp:(color-theme-comidia))
 
     ``` {.example}
-    [[elist: (color-theme-comidia)][comidia]] 
+    [[elist: (color-theme-comidia)][comidia]]
     ```
 
 top

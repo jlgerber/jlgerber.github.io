@@ -1,3 +1,10 @@
+---
+layout: page
+title: OS X
+tagline: Mac Crack
+description: Favorite Os of the Elite Hipster Programmer with Sticker Festooned Laptop
+---
+
 Finder
 ======
 
