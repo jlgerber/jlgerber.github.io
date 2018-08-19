@@ -47,6 +47,7 @@
 
 - Formatting
     - [prettytable-rs console table printing](https://github.com/phsym/prettytable-rs)
+
 #### podcasts
 
 - [new rustacean](http://www.newrustacean.com/)
