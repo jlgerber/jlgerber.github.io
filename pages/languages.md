@@ -7,7 +7,7 @@ description: A journey through the many languages I have known
 
 ### Lets talk Languages I use frequently these days
 
-* [*rust*](languages/rust.cpp) :
+* [*rust*](languages/rust.md) :
     My new favorite language I do admit.
 * [*python*](languages/python.md) :
     Bastion of production, but sadly slow and dynamically typed.
