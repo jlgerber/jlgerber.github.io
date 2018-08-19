@@ -29,3 +29,4 @@ description: A journey through the many languages I have known
 * rsl
 * tcl
 * perl
+* basic
