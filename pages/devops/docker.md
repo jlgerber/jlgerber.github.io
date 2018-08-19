@@ -1,4 +1,4 @@
-# Docker Commands
+### Docker Commands
 
   command | description
   --- | ---
@@ -12,12 +12,12 @@
   start  |   start a stopped container process
   stop   |   stop a running container process
 
-## run ( run a container with an optional command )
+#### run ( run a container with an optional command )
 
 run a command using a container. If you don't specify a command to run,
 it will use the default command specified on the docker image.
 
-### Flags
+##### Flags
 
 flag |  description
 --- | ---
@@ -26,7 +26,7 @@ flag |  description
   -P   |                                 publish all exposed ports to random ports
   -p \[host port\]:\[container port\] |   publish a container's port(s) to the host
 
-## ps ( list container processes )
+#### ps ( list container processes )
 
 List running containers
 
@@ -34,7 +34,7 @@ List running containers
 --- | ---
   -a  | list all of the containers ever run
 
-## logs ( inspect logs of running container )
+#### logs ( inspect logs of running container )
 
 Inspect the logs of a running container. Useful to monitor what detached
 containers are doing.
@@ -43,21 +43,21 @@ containers are doing.
   --- |  ---
   -f  |   attach to log. like using tail.
 
-## commit ( create a container image )
+#### commit ( create a container image )
 
-### Syntax
+##### Syntax
 
 docker commit \[options\] \[container ID\] \[repository:tag\]
 
-#### Repo name shoudl be based on username/application
+###### Repo name shoudl be based on username/application
 
-#### Can reference the container with the name instead of ID
+###### Can reference the container with the name instead of ID
 
-#### Will use "latest" tag if not supplied.
+###### Will use "latest" tag if not supplied.
 
-#### Example
+###### Example
 
-##### Part 1 - run an image and modify it
+####### Part 1 - run an image and modify it
 
 ``` {.example}
 docker run -it ubuntu bash
@@ -66,14 +66,14 @@ apt-get install -y curl
 exit
 ```
 
-##### Part 2 - find the image commit the image
+####### Part 2 - find the image commit the image
 
 ``` {.example}
 docker ps -a
 docker commit 9245327 jgerber/myapplication:1.0
 ```
 
-##### Part 3 - run the new image and verify that the command is available
+####### Part 3 - run the new image and verify that the command is available
 
 ``` {.example}
 docker run -it jgerber/myapplication:1.0 bash
@@ -84,21 +84,21 @@ exec (start process within a detached container )
 
 start another process within a container
 
-### syntax docker exec -i -t \[container ID\] \[command\]
+##### syntax docker exec -i -t \[container ID\] \[command\]
 
-### use this to start a bash shell
+##### use this to start a bash shell
 
 docker exec -it a1fo3t333 /bin/bash
 
-### exiting the command will note terminate the container, because the command was not PID 1.
+##### exiting the command will note terminate the container, because the command was not PID 1.
 
-### example
+##### example
 
 ``` {.example}
-# start up tomcat as daemon
+### start up tomcat as daemon
 docker run -d tomcat:7
-# find its id and run bash
-docker ps 
+### find its id and run bash
+docker ps
 docker exec <ID> /bin/bash
 ...
 exit
@@ -114,21 +114,21 @@ rmi ( delete docker image )
 
 remove images
 
-### usage
+##### usage
 
 docker rmi \[image ID\] docker rmi \[repo:tag\]
 
-### example
+##### example
 
 ``` {.example}
 docker images
-docker 
+docker
 ```
 
 tag ( rename a local image repository before pushing it to docker hub )
 -----------------------------------------------------------------------
 
-### syntax
+##### syntax
 
 docker tag \[image ID\] \[repo:tag\] docker tag \[local repo:tag\]
 \[Docker Hum repo:tag\]
@@ -139,13 +139,13 @@ inspect ( display all the details about a container )
 -   Outputs details in JSON array
 -   Use grep to find a specific property
 
-### Syntax
+##### Syntax
 
 docker inspect &lt;Container name | ID&gt;
 
-### Flags
+##### Flags
 
-#### --format
+###### --format
 
 containers
 ==========
@@ -153,30 +153,30 @@ containers
 Container Commands
 ------------------
 
-### Exiting container without killing it
+##### Exiting container without killing it
 
 **\*** ctrl-P-Q
 
-### Exiting container and killing it
+##### Exiting container and killing it
 
-#### Type Exit
+###### Type Exit
 
 Container properties
 --------------------
 
-### container id
+##### container id
 
-#### containers can be specified using their ID or name
+###### containers can be specified using their ID or name
 
-##### long ID and short ID
+####### long ID and short ID
 
-##### Short ID and name cna be obtained using `docker ps` command
+####### Short ID and name cna be obtained using `docker ps` command
 
-##### Long ID obtained by inspecting container
+####### Long ID obtained by inspecting container
 
-### container name
+##### container name
 
-#### if you don't specify a name, docker will specify one for you.
+###### if you don't specify a name, docker will specify one for you.
 
 Container processes
 -------------------
@@ -190,27 +190,27 @@ Container images
 
 a container image is made up of image layers
 
-### image layers
+##### image layers
 
 file systems layered on top of each other.
 
-#### parent image
+###### parent image
 
 an image layer below the image in question
 
-#### base image
+###### base image
 
 the lowest or root image
 
-#### docker creates a top writable layer for containers
+###### docker creates a top writable layer for containers
 
-#### parent images are read only
+###### parent images are read only
 
-#### all changes are made at the writeable layer
+###### all changes are made at the writeable layer
 
-#### Docker uses COW to copy on write when the user changes something
+###### Docker uses COW to copy on write when the user changes something
 
-### creating new images
+##### creating new images
 
 images are created using the
 
@@ -231,23 +231,23 @@ comprised of INSTRUCTIONS
 
 specify what to do when building the image
 
-### Example Dockerfile
+##### Example Dockerfile
 
 ``` {.example}
-# Example of a comment
+### Example of a comment
 FROM ubuntu:14.04
 RUN apt-get update
 RUN apt-get install vim
 RUN apt-get install curl
 ```
 
-### RUN instruction
+##### RUN instruction
 
 excutes comman on top writable layer and performs a commit of the image
 
-#### multiple RUN instructions may be aggregated using "&&"
+###### multiple RUN instructions may be aggregated using "&&"
 
-##### example of aggregation
+####### example of aggregation
 
 ``` {.example}
 RUN apt-get upate && apt-get install -y \
@@ -256,7 +256,7 @@ vim \
 openjdk=7-jdk
 ```
 
-### CMD instruction
+##### CMD instruction
 
 -   CMD defines a default command to execute when a container is created
 -   CMD performs no action during the image build Shell format and EXEC
@@ -264,15 +264,15 @@ openjdk=7-jdk
 -   Can only be specified once in a Dockerfile
 -   Can be overridden at runtime by specifying explicitly
 
-#### Shell format cmd args
+###### Shell format cmd args
 
 CMD ping 127.0.0. -c 30
 
-#### Exec Format CMD \["CMD",args...\]
+###### Exec Format CMD \["CMD",args...\]
 
 CMD \["ping","127.0.0.1", "-c", "30"\]
 
-### ENTRYPIONT instruction
+##### ENTRYPIONT instruction
 
 -   Defines athe command that will be run when the container is executed
 -   Unlike CMD, it cannot be overridden.
@@ -281,12 +281,12 @@ CMD \["ping","127.0.0.1", "-c", "30"\]
 -   ENTRYPOINT must be formed using EXEC form in order to pass in args
 -   Container essential runs as an executable
 
-### EXPOSE instruction
+##### EXPOSE instruction
 
 -   Configures which ports a container will listen on at runtime
 -   Ports still need ot be mapped when container is executed
 
-#### Example Dockerfile
+###### Example Dockerfile
 
 ``` {.example}
 FROM ubuntu:14.04
@@ -301,45 +301,45 @@ CMD["nginx", "-g", "daemon off;"]
 Docker Build with Dockerfile
 ----------------------------
 
-### Syntax
+##### Syntax
 
 docker build \[options\] \[path\]
 
-### Docker searches for the Dockerfile in the root of the context.
+##### Docker searches for the Dockerfile in the root of the context.
 
 \${path}/Dockerfile
 
-### Tag the build (-t)
+##### Tag the build (-t)
 
 docker build -t \[repository:tag\] \[path\]
 
-#### Examples
+###### Examples
 
-##### Build an image using the current folder as the context path. Put image in jgerber/myimage repository and tag it as 1.0
+####### Build an image using the current folder as the context path. Put image in jgerber/myimage repository and tag it as 1.0
 
 docker build -t jgerber/myimage:1.0 .
 
-##### As above but use the myproject folder in as the context path
+####### As above but use the myproject folder in as the context path
 
 docker build -t jgerber/myimage:1.0 myproject
 
-### Specify a different dockerfile (-f)
+##### Specify a different dockerfile (-f)
 
 Tell docker to search for a different dockerfile name
 
 Building an image from a Dockerfile
 -----------------------------------
 
-### create a directory to house the Dockerfile
+##### create a directory to house the Dockerfile
 
-### create a Dockerfile in the directory
+##### create a Dockerfile in the directory
 
 ``` {.example}
 FROM ubuntu:14.04
 RUN apt-get update && apt-get install -y curl vim
 ```
 
-### run docker build
+##### run docker build
 
 docker build -t jgerber/testimage:1.0 .
 
@@ -349,27 +349,27 @@ Managing Images and Containers
 Start and Stop Containers
 -------------------------
 
-### docker start &lt;container ID&gt;
+##### docker start &lt;container ID&gt;
 
-#### example
+###### example
 
 run a docker image detached ( as a daemon )
 
 ``` {.example}
-docker run -d nginx 
+docker run -d nginx
 ```
 
-### docker stop &lt;container ID&gt;
+##### docker stop &lt;container ID&gt;
 
-#### example
+###### example
 
 stop a detached image
 
 ``` {.example}
-# find container id
+### find container id
 docker ps
-# stop container ( example id)
-docker stop a23235s 
+### stop container ( example id)
+docker stop a23235s
 ```
 
 Volumes
@@ -390,15 +390,15 @@ Mount a Volume
 -   Can be mapped to ahost directory
 -   Volume paths specified must be absolute
 
-### Howto mount a volume - examples
+##### Howto mount a volume - examples
 
-#### Execute a new container and moutn the folder /myvolume in its file system
+###### Execute a new container and moutn the folder /myvolume in its file system
 
 ``` {.example}
 docker run -d -P -v /myvolume nginx:1.7
 ```
 
-#### Execute a new container and map the /data/src folder from the host into the /test/src folder in the container
+###### Execute a new container and map the /data/src folder from the host into the /test/src folder in the container
 
 ``` {.example}
 docker run -i -t -v /data/src:/test/src nginx:1.7
@@ -412,19 +412,19 @@ Volumes in Dockerfile
 -   Cannot map volumes to host directories
 -   Volumes are initialized when the container is executed
 
-### String example
+##### String example
 
 ``` {.example}
 VOLUME /myvol
 ```
 
-### String example with multiple volumes
+##### String example with multiple volumes
 
 ``` {.example}
 VOLUME /www/website1.com /www/website2.com
 ```
 
-### JSON example
+##### JSON example
 
 ``` {.example}
 VOLUME ["myvol", "myvol2"]
@@ -454,7 +454,7 @@ Mapping ports
     Dockerfile and -P flag)
 -   Use -p and -P parameters in docker run
 
-### Example
+##### Example
 
 Map port 80 on the container to 8080 on the host
 
@@ -472,12 +472,12 @@ to securely transfer data from one to another
 -   Recipient containers have access to data on source containers
 -   Links are established based on container names
 
-### creating a link
+##### creating a link
 
 1.  Create the source container first
 2.  Create the recipeint container and the --link option
 
-#### example
+###### example
 
 Create the source container using postgres
 
@@ -491,7 +491,7 @@ Create the recipient container and link it
 docker run -d -P --name website --link database:db nginx
 ```
 
-### Uses of Linking
+##### Uses of Linking
 
 -   Containers can talk to each other without having to expose ports to
     the host
@@ -507,54 +507,54 @@ Administration
 Troubleshooting Containers
 --------------------------
 
-### If your container shuts down unexpectedly, it may be because the applicaiton your container was running has crashed.
+##### If your container shuts down unexpectedly, it may be because the applicaiton your container was running has crashed.
 
-### Container PID 1 process output can be viewed with `docker logs` command
+##### Container PID 1 process output can be viewed with `docker logs` command
 
-### `docker logs` will show whatever PID 1 writes to stdout.
+##### `docker logs` will show whatever PID 1 writes to stdout.
 
-#### Examples
+###### Examples
 
-##### View the output of the containers PID 1 process:
+####### View the output of the containers PID 1 process:
 
 ``` {.example}
 docker logs <container name | ID>
 ```
 
-##### View and follow the output
+####### View and follow the output
 
 ``` {.example}
 docker logs -f <container name | ID>
 ```
 
-##### Tail the last line of the logfile and follow it
+####### Tail the last line of the logfile and follow it
 
 ``` {.example}
 docker logs -f --tail 1 <container name | ID>
 ```
 
-### Container application logs
+##### Container application logs
 
 -   typically, apps have a well defined log location
 -   Map a host folder to the application's log folder in the container
 -   In this way, you can view the log generated in the container from
     your host folder
 
-#### You can mount a volume to map the log folder in the host to the log folder in the container.
+###### You can mount a volume to map the log folder in the host to the log folder in the container.
 
-##### Example - run a container using nginx image and mount a volume to map the /nginxlogs folder in the host to the /var/log/nginx folder in the container
+####### Example - run a container using nginx image and mount a volume to map the /nginxlogs folder in the host to the /var/log/nginx folder in the container
 
 ``` {.example}
 docker run -d -P -v /nginxlogs:/var/log/nginx nginx
 ```
 
-### docker inspect
+##### docker inspect
 
 You can use docker inspect to see information about a container image.
 
-### Docker Daemon
+##### Docker Daemon
 
-#### Starting and stopping Docker daemon
+###### Starting and stopping Docker daemon
 
 There are many reasons to stop and start the daemon, including changing
 logging levels.
@@ -576,7 +576,7 @@ logging levels.
     -   Run pidof docker to find the Docker process PID
     -   sudo kill \$(pidof docker)
 
-#### Docker Daemon upstart configuration file
+###### Docker Daemon upstart configuration file
 
 -   Located in `/etc/default/docker`
 -   use DOCKER~OPTS~ to control the startup options for the daemon when
@@ -587,11 +587,11 @@ logging levels.
     DOCKER_OPTS="--log-level debug --insecure-registry myserver.org:5000"
     ```
 
-#### Docer daemon logging
+###### Docer daemon logging
 
-##### start the docker daemon with --log-level parameter and specify the logging level
+####### start the docker daemon with --log-level parameter and specify the logging level
 
-##### Levels are:
+####### Levels are:
 
 -   Debug
 -   Info
@@ -599,22 +599,22 @@ logging levels.
 -   Error
 -   Fatal
 
-##### Example - Run docker daemon with debug log level (log written on terminal)
+####### Example - Run docker daemon with debug log level (log written on terminal)
 
-\#+begin~example~ sudo docker -d --log-level=debug
+\###+begin~example~ sudo docker -d --log-level=debug
 
-\#+end~example~
+\###+end~example~
 
-##### Example - Configuring in DOCKER~OPS~ ( log output will be written to /var/log/upstart/docker.log)
+####### Example - Configuring in DOCKER~OPS~ ( log output will be written to /var/log/upstart/docker.log)
 
-\#+begin~example~ DOCKER~OPTS~="--log-level debug"
+\###+begin~example~ DOCKER~OPTS~="--log-level debug"
 
-\#+end~example~ Then run docker as a service
+\###+end~example~ Then run docker as a service
 
 Overview of Security Practices
 ------------------------------
 
-### Linux containers and security
+##### Linux containers and security
 
 -   Docker helps make applications safer as it provides as reduced set
     of default privileges and capabilities.
@@ -627,7 +627,7 @@ Overview of Security Practices
     -   ensures that a compromised container won't bring down the entire
         host by exhausting resources
 
-### Quick security considerations
+##### Quick security considerations
 
 -   Docker daemon needs to run as root
 -   ONly ensure that trusted users can control the Docker daemon
@@ -640,7 +640,7 @@ Overview of Security Practices
 -   Docker security is additive and simple and should be used alongside
     best practices for Securing Linux distributions.
 
-#### Further Reading
+###### Further Reading
 
 -   <http://docs.docker.com/articles/security/>
 -   <http://www.slideshare.net/jpetazzo/docker-linux-containers-lxc-and-security>
@@ -653,69 +653,69 @@ Private Registry
     -   Run registry server using container
     -   Docker Hub Enterprise
 
-### Two versions
+##### Two versions
 
 -   Registry v1.0 for Docker 1.5 and below
 -   Registry v2.0 for Docker 1.6
 
-### Setting up a private registry
+##### Setting up a private registry
 
 -   Run the registry server inside a container
 -   Use the registry image at
     <https://registry.hub.docker.com/u/library/registry/>
 -   Image contains a pre-configured version of registry v2.0
 
-#### Example - Run a new container using the registry image
+###### Example - Run a new container using the registry image
 
 ``` {.example}
 docker run -d -p 5000:5000 registry:2.0
 ```
 
-### Push and pull from a private registry
+##### Push and pull from a private registry
 
 -   first tag the image iwth host IP or domain of the registry server,
     then run `docker push`
 
-#### Example
+###### Example
 
 ``` {.example}
-# Tag image and specify the registry host
-# myserver.net:5000 <- host domain of registry server:port
-# my-app:1.0 <- image repository:tag
+### Tag image and specify the registry host
+### myserver.net:5000 <- host domain of registry server:port
+### my-app:1.0 <- image repository:tag
 docker tag <image ID> myserver.net:5000/my-app:1.0
 
-# push image to registry
+### push image to registry
 docker push myserver.net:5000/my-app:1.0
 
-# pull image from registry
+### pull image from registry
 docker pull myserver.net:5000/my-app:1.0
 ```
 
 So...
 
 ``` {.example}
-# get list of image repositories via ps
+### get list of image repositories via ps
 docker images
-#  lets take postgres (IMAGE postres)
-docker tag 7ee9d2061970 localhost:5000/mypostgres:1.0 
+###  lets take postgres (IMAGE postres)
+docker tag 7ee9d2061970 localhost:5000/mypostgres:1.0
 
-# run docker images to find new tag
+### run docker images to find new tag
 docker images
 
-# run docker push to push into local registry container
+### run docker push to push into local registry container
 docker push localhost:5000/mypostgres:1.0
 ```
 
-### Accessing registry from other computers
+##### Accessing registry from other computers
 
 -   If you try to pull an image from our repo from another host, you
     will get an error:
 
-    \#+begin~example~
+    \###+begin~example~
 
 docker pull 192.168.1.3:5000/mypostgres:1.0
 
-\#+end~example~
+\###+end~example~
 
 -   You need to set up TLS or
 -   update the host into the insecure registry list in the docker
@@ -728,7 +728,7 @@ docker pull 192.168.1.3:5000/mypostgres:1.0
 check images in registry
 ------------------------
 
-### use curl
+##### use curl
 
 curl -v -X GET <http://localhost:5000/v2/postgres/tags/list>
 
