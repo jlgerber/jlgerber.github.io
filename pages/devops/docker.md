@@ -2,7 +2,7 @@
 
   command | description
   --- | ---
-  run   |    run a container
+  run   |  run a container
   logs   |   view logs for a container
   ps     |   view process information for a container
   commit |   saves changes in a container as a new image
@@ -19,18 +19,18 @@ it will use the default command specified on the docker image.
 
 ##### Flags
 
-flag |  description
+flag | description
 --- | ---
--d |                                    run in detached mode. also known as running as a daemon
-  -c  |                                   count. number of times to run a command
-  -P   |                                 publish all exposed ports to random ports
+-d | run in detached mode. also known as running as a daemon
+  -c  |  count. number of times to run a command
+  -P   | publish all exposed ports to random ports
   -p \[host port\]:\[container port\] |   publish a container's port(s) to the host
 
 #### ps ( list container processes )
 
 List running containers
 
-  flag |  description
+  flag | description
 --- | ---
   -a  | list all of the containers ever run
 
@@ -39,9 +39,9 @@ List running containers
 Inspect the logs of a running container. Useful to monitor what detached
 containers are doing.
 
-  flag |  description
-  --- |  ---
-  -f  |   attach to log. like using tail.
+  flag | description
+  --- | ---
+  -f  | attach to log. like using tail.
 
 #### commit ( create a container image )
 
