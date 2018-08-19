@@ -39,7 +39,7 @@ isolate a process and allow it to speak to other processes via secure means.
 
 - [Docker](devops/docker.md)
 - [Docker Swarm](devops/docker-swarm-mode.md)
--
+
 #### Systems Unix Commands
 Ok. So these are a few of my favorite things
 
