@@ -7,11 +7,11 @@ description: A journey through the many languages I have known
 
 ### Lets talk Languages I use frequently these days
 
-* rust :
+* [*rust*](languages/rust.cpp) :
     My new favorite language I do admit.
-* python :
+* [*python*](languages/python.md) :
     Bastion of production, but sadly slow and dynamically typed.
-* c++
+* [*c++*](languages/cpp.md)
 
 ### And Languages I use periodically
 * go :
