@@ -23,12 +23,14 @@ it will use the default command specified on the docker image.
 
 ##### Flags
 
+---
+
 flag | description
 --- | ---
 -d | run in detached mode. also known as running as a daemon
-  -c  |  count. number of times to run a command
-  -P   | publish all exposed ports to random ports
-  -p \[host port\]:\[container port\] |   publish a container's port(s) to the host
+  -c  | count. number of times to run a command
+  -P  | publish all exposed ports to random ports
+  -p \[host port\]:\[container port\] | publish a container's port(s) to the host
 
 #### ps ( list container processes )
 
@@ -63,7 +65,7 @@ docker commit \[options\] \[container ID\] \[repository:tag\]
 
 ###### Example
 
-####### Part 1 - run an image and modify it
+###### Part 1 - run an image and modify it
 
 ``` {.example}
 docker run -it ubuntu bash
@@ -72,14 +74,14 @@ apt-get install -y curl
 exit
 ```
 
-####### Part 2 - find the image commit the image
+###### Part 2 - find the image commit the image
 
 ``` {.example}
 docker ps -a
 docker commit 9245327 jgerber/myapplication:1.0
 ```
 
-####### Part 3 - run the new image and verify that the command is available
+###### Part 3 - run the new image and verify that the command is available
 
 ``` {.example}
 docker run -it jgerber/myapplication:1.0 bash
@@ -177,11 +179,11 @@ docker inspect &lt;Container name | ID&gt;
 
 ###### containers can be specified using their ID or name
 
-####### long ID and short ID
+###### long ID and short ID
 
-####### Short ID and name cna be obtained using `docker ps` command
+###### Short ID and name cna be obtained using `docker ps` command
 
-####### Long ID obtained by inspecting container
+###### Long ID obtained by inspecting container
 
 ##### container name
 
@@ -252,7 +254,7 @@ excutes comman on top writable layer and performs a commit of the image
 
 ###### multiple RUN instructions may be aggregated using "&&"
 
-####### example of aggregation
+###### example of aggregation
 
 ``` {.example}
 RUN apt-get upate && apt-get install -y \
@@ -323,11 +325,11 @@ CMD["nginx", "-g", "daemon off;"]
 
 ###### Examples
 
-####### Build an image using the current folder as the context path. Put image in jgerber/myimage repository and tag it as 1.0
+###### Build an image using the current folder as the context path. Put image in jgerber/myimage repository and tag it as 1.0
 
     docker build -t jgerber/myimage:1.0 .
 
-####### As above but use the myproject folder in as the context path
+###### As above but use the myproject folder in as the context path
 
     docker build -t jgerber/myimage:1.0 myproject
 
@@ -527,19 +529,19 @@ docker run -d -P --name website --link database:db nginx
 
 ###### Examples
 
-####### View the output of the containers PID 1 process:
+###### View the output of the containers PID 1 process:
 
 ``` {.example}
 docker logs <container name | ID>
 ```
 
-####### View and follow the output
+###### View and follow the output
 
 ``` {.example}
 docker logs -f <container name | ID>
 ```
 
-####### Tail the last line of the logfile and follow it
+###### Tail the last line of the logfile and follow it
 
 ``` {.example}
 docker logs -f --tail 1 <container name | ID>
@@ -554,7 +556,7 @@ docker logs -f --tail 1 <container name | ID>
 
 ###### You can mount a volume to map the log folder in the host to the log folder in the container.
 
-####### Example - run a container using nginx image and mount a volume to map the /nginxlogs folder in the host to the /var/log/nginx folder in the container
+###### Example - run a container using nginx image and mount a volume to map the /nginxlogs folder in the host to the /var/log/nginx folder in the container
 
 ``` {.example}
 docker run -d -P -v /nginxlogs:/var/log/nginx nginx
@@ -601,9 +603,9 @@ logging levels.
 
 ###### Docer daemon logging
 
-####### start the docker daemon with --log-level parameter and specify the logging level
+###### start the docker daemon with --log-level parameter and specify the logging level
 
-####### Levels are:
+###### Levels are:
 
 -   Debug
 -   Info
@@ -611,13 +613,13 @@ logging levels.
 -   Error
 -   Fatal
 
-####### Example - Run docker daemon with debug log level (log written on terminal)
+###### Example - Run docker daemon with debug log level (log written on terminal)
 
 \###+begin~example~ sudo docker -d --log-level=debug
 
 \###+end~example~
 
-####### Example - Configuring in DOCKER~OPS~ ( log output will be written to /var/log/upstart/docker.log)
+###### Example - Configuring in DOCKER~OPS~ ( log output will be written to /var/log/upstart/docker.log)
 
 \###+begin~example~ DOCKER~OPTS~="--log-level debug"
 
