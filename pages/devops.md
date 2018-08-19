@@ -26,12 +26,23 @@ And here are tools I _should_ be more familiar with:
 Yet more links. Click click click.
 
 #### Configuration Management
+Once upon a time, folks wrote ad hoc scripts to handle configuration management. Now the field is crowded with
+the likes of Puppet, Chef, Salt, and of course, Ansible. I happen to use Ansible, not because it is necessarily
+the best, but because I know python well, and thus feel comfortable extending it. The others are mostly Ruby,
+which I only have a passing familiarity with.
+
 - [Ansible](devops/ansible.md) - Python based configration management
 
-#### Virtualization
-- [Docker](devops/docker.md) - Container in userspace written in go and powered by awesome.
+#### Docker
+A Container in userspace, written in go and powered by awesome. Docker containers are designed to
+isolate a process and allow it to speak to other processes via secure means.
 
-#### Systems Commands
+- [Docker](devops/docker.md)
+- [Docker Swarm](devops/docker-swarm-mode.md)
+-
+#### Systems Unix Commands
+Ok. So these are a few of my favorite things
+
 - [netstat](devops/netstat.md) - Network Statistics.
 - [arp](devops/arp.md) - Interogate network table.
 - [Disk Commands](devops/linux-disk.md) - Various commands to work with logical and physical devices.
