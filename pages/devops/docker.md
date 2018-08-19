@@ -87,8 +87,8 @@ docker commit 9245327 jgerber/myapplication:1.0
 docker run -it jgerber/myapplication:1.0 bash
 ```
 
-exec (start process within a detached container )
--------------------------------------------------
+### exec (start process within a detached container )
+
 
 start another process within a container
 
@@ -112,13 +112,11 @@ docker exec <ID> /bin/bash
 exit
 ```
 
-rm (delete stopped containers)
-------------------------------
+### rm (delete stopped containers)
 
 deletes stopped containers
 
-rmi ( delete docker image )
----------------------------
+### rmi ( delete docker image )
 
 remove images
 
