@@ -57,21 +57,21 @@ docker network create -d=bridge company
 ###### Testing the network with an app
 (we run a container. in this case we dont expose a port so we cannot access it externally)
 
-######### customer api
+###### Customer api
 ```
 docker run --rm -d  --name customer-api --network company swarmgs/customer
 ```
 
-######### balance api
+###### Balance api
 We can refer to the customer api by name instead of ip address. This resolves via dns.
 ```
 docker run --rm -d --name balance-api -p 4000:3000 --network company -e MYWEB_CUSTOMER_API=customer-api:3000 swarmgs/balance
 ```
-######### Reading the balance
+###### Reading the balance
 ```
 http://localhost:4000/balance/1
 ```
-######### Service discovery
+###### Service discovery
 Notice that you can ping other containers by name on the same network, using dns to look up their addresses.
 
 ```
@@ -163,25 +163,28 @@ if you run a container with ```docker run``` it wont be a part of the swarm. Ins
 docker service create --name web -p 8080:80 nginx
 ```
 ###### Listing the running services
+
 ```
 docker service ls
-````
-###### gettign the service status
+```
+
+###### getting the service status
 ```
 docker service ps web
 ```
 ##### Understanding Services
 
+
 A service is a definition describing the *desired state* for your application. A service generates one or more tasks and each task generates a container. A service defines things like the image to run, exposed ports, commands, working directory, environment, memory and cpu limits, network, and the number of replicas (expected container instances).
 
 The swarm manager accepts your service definition of the desired state of your application and is responsible for maintaining that state.
 
-###### service modes
+##### service modes
 
-######### *replicated* Service Mode
+###### *replicated* Service Mode
 run as many replicated containers as requested, spread throughout the nodes
 
-######### *global* Service Mode
+###### *global* Service Mode
 one instance on each node on the cluster
 ##### Removing a service
 ```
@@ -206,7 +209,9 @@ Now check it
 ```
 docker service ps web
 ```
+
 ###### Scaling the number of service tasks
+
 Scaling is such a common requirement that there is a shorthand for this
 ```
 docker service scale <service>=<number>
@@ -225,37 +230,37 @@ You should see the a new container running in place of the old container we stop
 
 ##### Starting a second service
 
-```
-docker service create --name customer-api -p 3000:3000 swarmgs/customer
-```
+
+    docker service create --name customer-api -p 3000:3000 swarmgs/customer
+
 checking the state
-```
-docker service ls
-```
-and the task state
-```
-docker service ps customer-api
-```
-we can go go a web browser and see the service in action
-```
-http://localhost:3000/customer/1
-```
+
+    docker service ls
+
+And the task state:
+
+    docker service ps customer-api
+
+Qe can go go a web browser and see the service in action
+
+    http://localhost:3000/customer/1
+
 #### Getting Rid of single node swarm
-```
-docker swarm leave --force
-```
+
+    docker swarm leave --force
+
 ### Multi Node Swarm
 
 [github account for docker swarm getting started](https://github.com/g0t4/docker-swarm-mode-getting-started)
 
 ##### Using docker-machine to spin up some vms.
-```
-docker-machine create -d virtualbox m1
-```
+
+    docker-machine create -d virtualbox m1
+
 ##### Inspecting the vms via *docker-machine*
-```
-docker-machine ls
-```
+
+    docker-machine ls
+
 ###### ssh'ing into a particular virtual machine using
 ```
 docker-machine ssh <machine name>
@@ -269,8 +274,8 @@ docker-machine rm m1 m4
 #### Using Vagrant to model a swarm
 
 Rather than use docker-machine, you can use vagrant to set up and configure vms. Here is a vagrant file example which sets up a swarm. put it in a file called **Vagrantfile** and vagrant up.
-```
 
+```
 ### -*- mode: ruby -*-
 ### vi: set ft=ruby :
 
