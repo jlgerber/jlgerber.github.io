@@ -46,3 +46,36 @@ Kubernetes is  a container orhestration framework. It allows you to provision ho
 - sensitive data is a first class citizen
 - mounted as data volumes or env vars
 - specific to a namespace
+
+### Architecuture
+#### Master Node
+- the Api Server
+    - allows you to interact with the kubernetes control plane
+- scheduler
+    - watches created pods and designs the pod to run on a specific node
+- controller manager
+    - node controller runs controllers - backround threads that run tasks in a cluster
+    - has a bunch of different roles
+- etcd
+    - distributed db used for persistent storage
+- kubectl
+    - cli for interfacing with the API Server
+- kubeconfig
+#### worker node
+- kubelet
+    - agent communicates with the api server.
+    - see if pods have been assigned
+    - execute pod containers via the container engine
+    - mounts and runs pod volumes and secrets
+    - knows about pod states and responds back to the master
+- container platform (eg docker)
+- kube-proxy
+    - network proxy and load balancer
+    - handles network routing for tcp and udp packets
+    - performs connection forwarding
+    - handles internet traffic
+- pod
+    - smallest unit to be scheduled
+    - group of containers which share storage, linux namespace, ip addresses
+    - kubelet and kube-proxy communicates with them
+
