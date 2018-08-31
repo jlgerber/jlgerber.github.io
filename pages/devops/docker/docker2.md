@@ -14,5 +14,7 @@ flag | description
 --memory-swap bytes | Swap limit equal to memory plus swap: '-1' to enable unlimited swap
 --memory-swappiness int | Tune container swappiness (0 to 100 default -1)
 
+----
+
 More info can be found at [limiting a container's resources](https://docs.docker.com/config/containers/resource_constraints/)
 
