@@ -18,3 +18,24 @@ flag | description
 
 More info can be found at [limiting a container's resources](https://docs.docker.com/config/containers/resource_constraints/)
 
+### upgrading docker
+
+archive the configs for docker
+
+```/var/lib/docker```
+
+update apt and follow the instructions, which generally involves uninstalling and reinstalling...
+
+```
+apt-get update
+```
+
+### Configuring Docker
+#### Docker Storage drivers
+If you need persistant data within your container you will need to use a storage driver. To learn what driver you are using you would type:
+
+```
+docker info | grep Storage
+```
+
+This will list the currently configured storage driver. However, one has choices and a good place to start is here ( [Docker Storage Drivers](https://docs.docker.com/storage/storagedriver/select-storage-driver/) )
