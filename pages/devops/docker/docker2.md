@@ -57,3 +57,54 @@ A collection of related images (usually providing different versions of the same
 An alphanumeric identifier attached to images within a repository (e.g., 14.04 or stable ).
 
 So the command ```docker pull amouat/revealjs:latest``` will download the image tagged latest within the ```amouat/revealjs``` repository from the Docker Hub registry.
+
+### Checking Status of Docker
+Can we communicate with the server? what version of the client and server do we have?
+
+```
+docker version
+```
+
+How many containers we have on a host. How many containers running vs stopped, etc
+```
+docker info | more
+```
+
+what containers are running on the host
+```
+docker ps
+```
+
+what containers are both active and inactive?
+```
+docker ps -a
+```
+
+On a swarm manager, you can get the status of the swarm cluster
+```
+docker node ls
+```
+
+#### Configuring docker logging
+1. default log type per docker daemon
+2. per container log types which can override the default
+
+You can find all the details here ()
+
+To determine what the current setup is:
+
+```
+docker info | grep 'Logging Driver'
+```
+
+To change the default logging type edit daemon.json
+```
+cd /etc/docker
+vi daemon.json
+```
+
+Configuring logging for a specific container
+```
+docker run --log-driver=syslog --log-opt syslog-address=udp://1.1.1.1 alpine
+```
+

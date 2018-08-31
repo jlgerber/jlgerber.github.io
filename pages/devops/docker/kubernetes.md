@@ -1,0 +1,2 @@
+# What is Kubernetes
+Kubernetes is  a container orhestration framework. It allows you to provision hosts, start containers in a host, restart failed containers, link containers together, expose containers to the rest of the world, and scale up and down.
