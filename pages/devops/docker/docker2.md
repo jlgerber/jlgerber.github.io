@@ -39,3 +39,21 @@ docker info | grep Storage
 ```
 
 This will list the currently configured storage driver. However, one has choices and a good place to start is here ( [Docker Storage Drivers](https://docs.docker.com/storage/storagedriver/select-storage-driver/) )
+
+#### Docker Registries, Repositories, and Tags
+
+Docker images are identified by unique tags, sotred in repositories, optionally tracked by registries. As a reminder here are some definitions (thanks stackoverflow)
+
+##### Registry
+
+A service responsible for hosting and distributing images. The default registry is the Docker Hub.
+
+##### Repository
+
+A collection of related images (usually providing different versions of the same application or service).
+
+##### Tag
+
+An alphanumeric identifier attached to images within a repository (e.g., 14.04 or stable ).
+
+So the command ```docker pull amouat/revealjs:latest``` will download the image tagged latest within the ```amouat/revealjs``` repository from the Docker Hub registry.
