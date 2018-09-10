@@ -79,3 +79,60 @@ Kubernetes is  a container orhestration framework. It allows you to provision ho
     - group of containers which share storage, linux namespace, ip addresses
     - kubelet and kube-proxy communicates with them
 
+### Hello World
+In order to test kubernetes, we will use minikube. Minikube is an app which makes it simple to run kubernetes locally. Of course, you need to install minikube first. And you need to have Kubernetes and docker installed as well as virtualbox.
+
+```
+minikube start
+```
+
+This will download the iso when run for the first time.
+
+Verify that they are talking to each other
+
+```
+>kubectl get nodes
+
+NAME      STATUS    ROLES     AGE     VERSION
+minikube  Ready     <none>    31s      v1.8.0
+>
+```
+
+Now we are ready to run hello world.
+
+We are going to run a common hello world app:
+
+```
+>kubectl run hw --image=karthequian/hellowordl --port=80
+deployment "hw" created
+>kubectl get deployments
+NAME    DESIRED    CURRENT  UP_TO_DATE AVAILABLE   AGE
+hw      1          1        1          1           8s
+>kubectl get rs
+NAME      DESIRED   CURRENT  READY  AGE
+hw-63636  1         1        1      32s
+>kubectl get pods
+NAME      READY     STATUS    RESTARTS   AGE
+hw-asfsaf 1/1       Running   0          1m
+```
+
+now we need to expose this as a service
+
+```
+>kubectl expose deployment hw --type=NodePort
+service "hw" exposed
+```
+Take a look
+
+```
+>kubectl get services
+NAME        TYPE      CLUSTER-IP    EXTERNAL-IP     PORT(S)       AGE
+hw          NodePort  10.0.0.252    <none>          00:32611/TCP  6s
+kubernetes  ClusterIP 10.0.0.1      <none>          443/TCP       51m
+```
+
+See app up and running we need to tell minikube to pull this up in the browser
+
+```
+>minikube service hw
+```
