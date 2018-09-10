@@ -1,5 +1,3 @@
-# Table of Conents
-- [Table of Conents](#table-of-conents)
 - [FROM Instruction](#from-instruction)
 - [ENV instruction](#env-instruction)
 - [ARG Instruction](#arg-instruction)
