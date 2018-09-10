@@ -40,6 +40,7 @@ isolate a process and allow it to speak to other processes via secure means.
 - [Intro](devops/docker/docker.md)
 - [update](devops/docker/docker2.md)
 - [Swarm](devops/docker/docker-swarm-mode.md)
+- [Dockerfile Details](devops/docker/building_dockerfile.md)
 
 ### Kubernetes
 - [Intro](devops/docker/kubernetes.md)
