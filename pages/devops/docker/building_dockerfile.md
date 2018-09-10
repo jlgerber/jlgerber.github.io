@@ -5,7 +5,7 @@
     - [RUN Instruction Best Practices](#run-instruction-best-practices)
         - [Example](#example)
 - [COPY Instruction](#copy-instruction)
-        - [Example](#example)
+    - [Example](#example)
 - [Defining what a container executes when it starts](#defining-what-a-container-executes-when-it-starts)
     - [CMD Instruction](#cmd-instruction)
     - [ENTRYPOINT Instruction](#entrypoint-instruction)
@@ -133,7 +133,7 @@ Content is added with a UID and GID of 0.
 
 NB: there is also an older, ADD instruction which should be avoided.
 
-### Example
+## Example
 ```
 # File or directory called foo copied as bar
 COPY foo /bar
