@@ -167,6 +167,7 @@ Two forms of syntax: shell and exec (preferred)
 Shell form limits controlusing Linux signals. Using the shell, the shell becomes pid 1. Using the exec form, the command itself becomes pid 1.
 
 ### Example
+#### CMD Example
 Dockerfile
 ```
 FROM debian::jessie-slim
@@ -198,6 +199,8 @@ Because we used a CMD, we can override the command.
 ```
 docker container run demo screenfetch -E
 ```
+
+#### ENTRYPOINT Example
 
 If we replace the CMD instruction with an ENTRYPOINT instruction in the Dockerfile:
 ```
@@ -232,6 +235,7 @@ docker container run demo -f tux "if you're going through hell: keep going"
 
 We cannot override the command itself.
 
+#### CMD with ENTRYPOINT Example
 We will make a change to the dockerfile to see how CMD and ENTRYPOINT work together:
 
 ```
