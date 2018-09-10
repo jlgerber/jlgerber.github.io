@@ -1,3 +1,22 @@
+# Table of Conents
+- [Table of Conents](#table-of-conents)
+- [FROM Instruction](#from-instruction)
+- [ENV instruction](#env-instruction)
+- [ARG Instruction](#arg-instruction)
+- [RUN Instruction](#run-instruction)
+    - [RUN Instruction Best Practices](#run-instruction-best-practices)
+        - [Example](#example)
+- [COPY Instruction](#copy-instruction)
+        - [Example](#example)
+- [Defining what a container executes when it starts](#defining-what-a-container-executes-when-it-starts)
+    - [CMD Instruction](#cmd-instruction)
+    - [ENTRYPOINT Instruction](#entrypoint-instruction)
+        - [Example](#example)
+            - [CMD Example](#cmd-example)
+            - [ENTRYPOINT Example](#entrypoint-example)
+            - [CMD with ENTRYPOINT Example](#cmd-with-entrypoint-example)
+- [HEALTHCHECK Instruction](#healthcheck-instruction)
+
 # FROM Instruction
 
 specify base image
