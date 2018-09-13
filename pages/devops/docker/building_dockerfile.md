@@ -15,7 +15,7 @@
             - [CMD with ENTRYPOINT Example](#cmd-with-entrypoint-example)
 - [HEALTHCHECK Instruction](#healthcheck-instruction)
 - [ONBUILD Instruction](#onbuild-instruction)
-- [METADATA insrtructions](#metadata-insrtructions)
+- [METADATA instructions](#metadata-instructions)
 - [Example - Authoring an Nginx Docker Image](#example---authoring-an-nginx-docker-image)
     - [Nginx](#nginx)
         - [Plan the content](#plan-the-content)
@@ -322,7 +322,7 @@ Image used as base image for similar images
 
 For all instructions execept FROM and ONBUILD
 
-# METADATA insrtructions
+# METADATA instructions
 A number of additional commands exist to apply metadata to a container. These are
 
 Instruction | Purpose
