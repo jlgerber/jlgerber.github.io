@@ -19,7 +19,12 @@
 - [Example - Authoring an Nginx Docker Image](#example---authoring-an-nginx-docker-image)
     - [Nginx](#nginx)
         - [Plan the content](#plan-the-content)
-        - [Dockerfile take 1](#dockerfile-take-1)
+        - [Dockerfile Take 1](#dockerfile-take-1)
+        - [Build the dockerfile](#build-the-dockerfile)
+            - [how big is the image?](#how-big-is-the-image)
+            - [run it](#run-it)
+        - [have we achieved the best outcome?](#have-we-achieved-the-best-outcome)
+        - [Dockerfile Take 2 - Multi-stage Docker Image Builds](#dockerfile-take-2---multi-stage-docker-image-builds)
 
 # FROM Instruction
 
@@ -355,7 +360,7 @@ Open source http server and reverse proxy written in C. There are numerous docke
 - serve binary
     - Define Execution
 
-### Dockerfile take 1
+### Dockerfile Take 1
 ```dockerfile
 FROM alpine:latest
 
@@ -408,6 +413,89 @@ EXPOSE 80
 ENTRYPOINT ["/usr/local/nginx/sbin/nginx"]
 # start nginx in the forground
 CMD ["-g", "daemon off;"]
+```
+### Build the dockerfile
+```shell
+docker image build -t nginx
+```
+#### how big is the image?
+```
+docker image ls nginx
+```
+#### run it
+```
+docker container run -d -p 80:80 nginx
+```
+### have we achieved the best outcome?
+- we build a dockerimage for nginx, heavily optimized with size in mind
+- This carries a cost in terms of readability, maintainability and productivity as we have had to concat all commands into a single run instruction. there is no build caching
+- How can we get teh best of both worlds for our docker image? Split our image in two - **build image** and **service image**
+- Docker has multi-stage Image Builds.
+### Dockerfile Take 2 - Multi-stage Docker Image Builds
+- Multi-stage builds use multiple FROM instructions
+- COPY instructions can reference content from a previous build stage
+- A build stage is referenced by index, or by a supplied name
+
+```Dockerfile
+FROM alpine:latest as build
+
+# Define build argument for version
+ARG VERSION=1.12.0
+
+# install build tools, libraries and utilities
+RUN apk add --no-cache --virtual .build-deps \
+        build-base   \
+        gnupg        \
+        pcre-dev     \
+        wget         \
+        zlib-dev
+# Retrive, verify and unpack nginx source
+RUN set -x                                                        && \
+    cd /tmp                                                       && \
+    gpg --keyserver pgp.mit.edu --recv-keys                          \
+        B0F4253373F8F6F510D42178520A9993A1C052F8                  && \
+    wget -q http://nginx.org/download/nginx-${VERSION}.tar.gz     && \
+    wget -q http://nginx.org/download/nginx-${VERSION}.tar.gz.asc && \
+    gpg --verify nginx-${VERSION}.tar.gz.asc                      && \
+    tar -xf nginx-${VERSION}.tar.gz
+
+WORKDIR /tmp/nginx-${VERSION}
+
+# Build and Install nginx
+RUN ./configure                          \
+        --with-ld-opt="-static"          \
+        --with-http_sub_module        && \
+    make install                      && \
+    strip /usr/local/nginx/sbin/nginx
+
+# Symlink access and error logs to /dev/stdout and /dev/stderror in order
+# to make use of Docker's logging mechanism
+RUN ln -sf /dev/stdout /usr/local/nginx/logs/access.log  && \
+    ln -sf /dev/stderr /usr/local/nginx/logs/error.log
+
+FROM scratch
+
+# Customize staticcontent and config
+# the first copy command copies between docker build stages. the build refers to
+# our first FROM instruction, specifically the "as build" part.
+COPY --from=build /usr/local/nginx /usr/local/nginx
+# the following two commands are necessary because we are building from scratch.
+# nginx has certain configuration dependencies which we have to fulfill. It expects
+# a "nobody" user for instance ( hence copying the passwd and group files)
+COPY --from=build /etc/passwd /etc/group /etc/
+COPY --from=build /usr/local/nginx /usr/local/nginx
+# copy static context
+COPY index.html /usr/local/nginx/html/
+COPY nginx.conf /usr/local/nginx/conf/
+# Change default stop signal from SIGTERM to SIGQUIT
+STOPSIGNAL SIGQUIT
+
+# Expose port
+EXPOSE 80
+
+# Define entrypoint and default
+ENTRYPOINT ["/sr/local/nginx/sbin/nginx"]
+CMD ["-g","daemon off;"]
 ```
 
 
