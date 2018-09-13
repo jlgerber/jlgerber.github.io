@@ -14,6 +14,12 @@
             - [ENTRYPOINT Example](#entrypoint-example)
             - [CMD with ENTRYPOINT Example](#cmd-with-entrypoint-example)
 - [HEALTHCHECK Instruction](#healthcheck-instruction)
+- [ONBUILD Instruction](#onbuild-instruction)
+- [METADATA insrtructions](#metadata-insrtructions)
+- [Example - Authoring an Nginx Docker Image](#example---authoring-an-nginx-docker-image)
+    - [Nginx](#nginx)
+        - [Plan the content](#plan-the-content)
+        - [Dockerfile take 1](#dockerfile-take-1)
 
 # FROM Instruction
 
@@ -298,3 +304,111 @@ Command runs periodicallly in the container
 Options for interval, timeout and retries.
 
 Health status is available via Docker CLI.
+
+# ONBUILD Instruction
+
+Provides a means to impose method on image use
+
+ONBUILD defers exection of instruciton
+
+Trigger is added to the image's metadata
+
+Image used as base image for similar images
+
+For all instructions execept FROM and ONBUILD
+
+# METADATA insrtructions
+A number of additional commands exist to apply metadata to a container. These are
+
+Instruction | Purpose
+--- | ---
+EXPOSE | Specifies TCP/UDP ports for a container
+LABEL | Adds a static label to the image. Useful for anotating an image. But can be used for a variety of purposes.
+STOPSIGNAL | Defines the signal to stop a container's process. By default, Docker sends the SIGTERM signal to a container's process to stop it. However some applications are configured to listen to a different signal, so STOPSIGNAL allows us to sent a different signal.
+USER | Sets the container's user. If our app doesn't require root privilages, we can specify a non-root user to run the volume.
+VOLUME | Specifies a mount point for persistent data. Docker volumes bypass docker's copy on write system and allows us to persist data.
+WORKDIR | Sets the working directory
+
+# Example - Authoring an Nginx Docker Image
+- Plan the image content
+- Author a Dockerfile
+- Make use of multi-stage image builds
+- Apply multi-stage build for image
+
+## Nginx
+Open source http server and reverse proxy written in C. There are numerous docker images which already expose Nginx. However, we want to learn how to do this ourselves.
+
+### Plan the content
+- prep - make sure we have correct tooling
+- acquire sourcecode
+    - download sourcecode
+    - verify download (get pgp)
+    - unpack sourcecode
+- build nginx
+    - configure build
+    - Make binary
+    - Clean
+- configure
+    - Ensure logging works
+    - Provide content
+    - Customize image
+- serve binary
+    - Define Execution
+
+### Dockerfile take 1
+```dockerfile
+FROM alpine:latest
+
+# Define build argument for version
+ARG VERSION=1.12.0
+
+# use -x shell command to print each command as executed
+RUN set -x    && \
+    apk add --no-cache --virtual .build-deps \
+        build-base   \
+        gnupg        \
+        pcre-dev     \
+        wget         \
+        zlib-dev  && \
+# retrieve verify and unpack nginx source \
+    TMP="$(mktemp -d)" && cd "$TMP" && \
+    gpg --keyserver pgp.mit.edu --recv-keys \
+        B0F4253373F8F6F510D42178520A9993A1C052F8 && \
+    wget -q http://nginx.org/download/nginx-${VERSION}.tar.gz && \
+    wget -q http://nginx.org/downlaod/nginx-${VERSION}.tar.gz.asc && \
+    gpg --verify nginx-${VERSION}.tar.gz.asc                      && \
+    tar -xf nginx-${VERSION}.tar.gz && \
+#build and install nginx \
+    cd nginx-${VERSION} && \
+    ./configure \
+        --with-id-opt="-static" \
+        --with-http_sub_module && \
+    make install && \
+    strip /usr/local/nginx/sbin/nginx && \
+#Clean up \
+    cd / && rm -rf "$TMP" && \
+    apk del .build-deps && \
+#Configure \
+# symlink access and error logs to /dev/stdout and /dev/stderr \
+# in order to make use of Docker's logging mechanism \
+ln -sf /dev/stdout /usr/local/nginx/logs/access.log && \
+ln -sf /dev/stderr /usr/local/nginx/logs/error.log
+
+# Customize static contenxt and configuraiton
+COPY ingex.html /usr/local/nginx/html/
+COPY nginx.conf /usr/local/nginx/conf/
+
+# nginx needs to receive a sigquit to stop
+STOPSIGNAL SIGQUIT
+
+# Expose port
+EXPOSE 80
+
+# Define entrypoint and default parameters
+ENTRYPOINT ["/usr/local/nginx/sbin/nginx"]
+# start nginx in the forground
+CMD ["-g", "daemon off;"]
+```
+
+
+
