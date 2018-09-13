@@ -20,10 +20,10 @@
     - [Nginx](#nginx)
         - [Plan the content](#plan-the-content)
         - [Dockerfile Take 1](#dockerfile-take-1)
-        - [Build the dockerfile](#build-the-dockerfile)
+            - [Build the dockerfile](#build-the-dockerfile)
             - [how big is the image?](#how-big-is-the-image)
             - [run it](#run-it)
-        - [have we achieved the best outcome?](#have-we-achieved-the-best-outcome)
+            - [Have We Achieved the Best Outcome?](#have-we-achieved-the-best-outcome)
         - [Dockerfile Take 2 - Multi-stage Docker Image Builds](#dockerfile-take-2---multi-stage-docker-image-builds)
 
 # FROM Instruction
@@ -414,7 +414,7 @@ ENTRYPOINT ["/usr/local/nginx/sbin/nginx"]
 # start nginx in the forground
 CMD ["-g", "daemon off;"]
 ```
-### Build the dockerfile
+#### Build the dockerfile
 ```shell
 docker image build -t nginx
 ```
@@ -426,7 +426,7 @@ docker image ls nginx
 ```
 docker container run -d -p 80:80 nginx
 ```
-### have we achieved the best outcome?
+#### Have We Achieved the Best Outcome?
 - we build a dockerimage for nginx, heavily optimized with size in mind
 - This carries a cost in terms of readability, maintainability and productivity as we have had to concat all commands into a single run instruction. there is no build caching
 - How can we get teh best of both worlds for our docker image? Split our image in two - **build image** and **service image**
