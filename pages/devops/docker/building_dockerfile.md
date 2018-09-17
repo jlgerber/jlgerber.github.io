@@ -79,13 +79,13 @@ ARG <variable[=default value]>
 ```
 ARG can optionally define a default value
 
-Variable can only be consumed from the point of definitionl=.
+Variable can only be consumed from the point of definition.
 
 Variables do **not** persist into derived container.
 
 Altered build args break build cache at point consumed.
 
-Variables defined wit hENV overridevariables defined with ARG. A variable defined wit hARG can be redifined using ENV. Thus a build argument can be passed on to derived containers.
+Variables defined with ENV override variables defined with ARG. A variable defined with ARG can be redifined using ENV. Thus a build argument can be passed on to derived containers.
 
 ```
 # Define build argument for verision
