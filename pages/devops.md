@@ -47,4 +47,5 @@ isolate a process and allow it to speak to other processes via secure means.
 
 #### Elasticsearch
 - [intro](devops/elastic_search/elasticsearch_intro.md)
+- [intro part 2](devops/elastic_search/elasticsearch_intro_2.md)
 - [clusters](devops/elastic_search/clusters.md)

@@ -21,4 +21,4 @@ In order to add data to Elasticsearch, we need to add an index first. An index i
 
 A shard is a single instance of a Lucene db. A shard may either be a *primary* or *replica* shard. Each document in your index belongs to a primary shard.
 
-The number of primary shards assigned to an index is fixed at index creation time. The number defualts to 5.
+The number of primary shards assigned to an index is fixed at index creation time. The number defaults to 5.
