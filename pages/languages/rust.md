@@ -7,7 +7,7 @@
 - [rust tutorials](http://hackr.io/tutorials/rust)<span class="tag" data-tag-name="tutorial"></span>
 - [Learning Rust](https://github.com/ctjhoa/rust-learning)
 - [rustup](https://github.com/rust-lang-nursery/rustup.rs) - working with multiple versions of rust
-
+- [gtk](rust/gtk/intro.md)
 #### Resources
 
 - [rust by example](http://rustbyexample.com/)
