@@ -614,5 +614,5 @@ In addition to the search results, you get an 'aggregations' section:
 }
 ```
 
-Aggregations may also be nested, so in our case, we could have asked for a histogram per city.
+Aggregations may also be nested, so in our case, we could have asked for a histogram per city. 
 
