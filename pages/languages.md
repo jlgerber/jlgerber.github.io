@@ -19,6 +19,7 @@ description: A journey through the many languages I have known
 * javascript
 * elm
 * vex
+* osl
 
 ### And Languages I am learning at the Moment
 * clojure
