@@ -41,3 +41,4 @@ description: A journey through the many languages I have known
 * Erlang
 * Scala
 * Elixr
+* Julia
