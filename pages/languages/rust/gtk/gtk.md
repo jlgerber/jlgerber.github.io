@@ -29,7 +29,7 @@ let args : Vec<String> = Vec::new();
 application.run(&args);
 ```
 
-# Brining Window to the Fron
+# Brining Window to the Front
 After creating an application, you probably want the main window to raise to the front. This can be achieved by calling `present()` on the window.
 
 ```rust
