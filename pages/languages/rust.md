@@ -60,11 +60,14 @@ I try and update this list from time to time
     - [combine](https://marwes.github.io/combine/combine/index.html)<span class="tag" data-tag-name="5star"></span>
 - Formatting
     - [prettytable-rs console table printing](https://github.com/phsym/prettytable-rs)
-- web -ish
+- web ish
     - [memcached](https://github.com/jaysonsantos/bmemcached-rs)
+    
 #### Videos
+
 - regex
     - [regex in rust](rust/videos.md)
+    
 #### Resources
 
 - [rust by example](http://rustbyexample.com/)
@@ -100,12 +103,11 @@ tutorial out there.
 
 #### Tutorials<span class="tag" data-tag-name="tutorial"></span>
 
-- [ArcadeRs - learn rust by writing a game](https://jadpole.github.io/arcaders/arcaders-1-0)
+- [ArcadeRs ](https://jadpole.github.io/arcaders/arcaders-1-0) learn rust by writing a game
 - [building a web server in rust](https://dfockler.github.io/2016/05/20/web-server.html)<span class="tag" data-tag-name="tutorial"></span><span class="tag" data-tag-name="web"></span>
 - [controlling executable size](https://lifthrasiir.github.io/rustlog/why-is-a-rust-executable-large.html)
 - [creating a basic web service in rust](http://hermanradtke.com/2016/05/16/creating-a-basic-webservice-in-rust.html)<span class="tag" data-tag-name="tutorial"></span><span class="tag" data-tag-name="web"></span>
 - [creating a rust function that accepts string or str](http://hermanradtke.com/2015/05/06/creating-a-rust-function-that-accepts-string-or-str.html)
-
 - [error handling in rust](https://doc.rust-lang.org/book/error-handling.html#the-try-macro)<span class="tag" data-tag-name="5star"></span>
 - [rust error handling](http://blog.burntsushi.net/rust-error-handling/)<span class="tag" data-tag-name="5star"></span>
 - [set up emacs for rust development](http://julienblanchard.com/2016/fancy-rust-development-with-emacs/)
