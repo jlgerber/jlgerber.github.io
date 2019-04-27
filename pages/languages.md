@@ -23,18 +23,18 @@ description: A journey through the many languages I have known
 
 ### And Languages I am learning at the Moment
 * clojure
-* groovy
+* groovy - because of jenkins
 
 ### And Lanaguages I have used in the past
 * c
-* lisp
+* lisp - took a class in lisp once and liked it. and I used to hack on emacs
 * haskell (luv it. wish i had more time for haskell)
 * java
-* tcl
-* perl
-* rsl
-* mel
-* basic
+* tcl - only because of Slim
+* perl - precursor to python as a production workhorse in vfx
+* rsl - renderman shading language
+* mel - maya's scripting language
+* basic - ok when i was like 7
 
 ### And languages I still want to learn
 * OCaml
