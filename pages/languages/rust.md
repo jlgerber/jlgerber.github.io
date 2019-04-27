@@ -2,8 +2,8 @@
 Rust is my new favorite language (as of this writing). It mixes Haskell concepts liked algebraic datatypes, pattern matching, and type classes, with c concepts like explicit memory management and zero overhead abstractions, with its own take on managing mutability and ownership. 
 
 #### Internal Pages
-##### gui
-- [gtk](rust/gtk/intro.md)
+- gui
+    - [gtk](rust/gtk/intro.md)
 
 #### Main Pages
 
