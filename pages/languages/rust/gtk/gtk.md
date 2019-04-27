@@ -20,7 +20,7 @@ fn main() {
     application.run(&env::args().collect::<Vec<_>>());
 }
 ```
-`gtk::Application::new``` takes an application name in the form of a reverse url, and [gio::ApplicationFlags](https://gtk-rs.org/docs/gio/struct.ApplicationFlags.html). The flags may be used to declare that the application is a service, is non unique, hankdles opening files,etc. 
+`gtk::Application::new` takes an application name in the form of a reverse url, and [gio::ApplicationFlags](https://gtk-rs.org/docs/gio/struct.ApplicationFlags.html). The flags may be used to declare that the application is a service, is non unique, hankdles opening files,etc. 
 
 I tend to set this to `gio::ApplicationFlags::empty()`, and handle parsing env vars via `structopt`.
 To do this, it is best to pass an empty Vec to `application.run` like so:
