@@ -5,7 +5,7 @@ Rust is my new favorite language (as of this writing). It mixes Haskell concepts
 - gui
     - [gtk](rust/gtk/intro.md)
 
-#### Main Pages
+#### Main Sites
 
 - [main rust page](https://www.rust-lang.org/documentation.html)
 - [rust std library](https://doc.rust-lang.org/std/)
@@ -14,16 +14,18 @@ Rust is my new favorite language (as of this writing). It mixes Haskell concepts
 - [rustup](https://github.com/rust-lang-nursery/rustup.rs) - working with multiple versions of rust
 
 
-#### Crates of note
-- [zeromq rust](https://github.com/erickt/rust-zmq)
-- [ssh2](https://github.com/alexcrichton/ssh2-rs)
-- [low level networking](https://github.com/libpnet/libpnet)
+#### Crates of Note
+I try and update this list from time to time
+- ipc / rpc / networking
+    - [zeromq rust](https://github.com/erickt/rust-zmq)
+    - [ssh2](https://github.com/alexcrichton/ssh2-rs)
+    - [low level networking](https://github.com/libpnet/libpnet)
 - Compression
     - [zip](https://github.com/slackito/zip)
     - [tar](https://github.com/alexcrichton/tar-rs)
     - [bzip2](https://github.com/alexcrichton/bzip2-rs)
-- cli
-    - structopt
+- cli defining command line interfaces
+    - structopt - macros that makes it simpler to use ``clap``
         - [docs](https://docs.rs/structopt/0.2.15/structopt/)
         - [repo](https://github.com/TeXitoi/structopt)
     - clap
@@ -31,10 +33,13 @@ Rust is my new favorite language (as of this writing). It mixes Haskell concepts
         - [docs](https://docs.rs/clap/2.33.0/clap/)
         - [repo](https://github.com/clap-rs/clap)
     - [docopt](https://github.com/docopt/docopt.rs)
-- [memcached](https://github.com/jaysonsantos/bmemcached-rs)
-- [rust cpython](https://github.com/dgrunwald/rust-cpython)
+- ffi
+  - python
+    - [rust cpython](https://github.com/dgrunwald/rust-cpython)
 - [rust container system](https://github.com/tailhook/vagga)
-- [fuse file system](https://github.com/zargony/rust-fuse)
+- Filesystem
+    - [walkdir](https://github.com/BurntSushi/walkdir) Great crate from Burntsuhsi
+    - [fuse file system](https://github.com/zargony/rust-fuse)
 - Databases
     - [elasticsearch](https://github.com/benashford/rs-es)
     - [postgres](https://github.com/sfackler/rust-postgres)
@@ -55,7 +60,11 @@ Rust is my new favorite language (as of this writing). It mixes Haskell concepts
     - [combine](https://marwes.github.io/combine/combine/index.html)<span class="tag" data-tag-name="5star"></span>
 - Formatting
     - [prettytable-rs console table printing](https://github.com/phsym/prettytable-rs)
-
+- web -ish
+    - [memcached](https://github.com/jaysonsantos/bmemcached-rs)
+#### Videos
+- regex
+    - [regex in rust](rust/videos/main.md)
 #### Resources
 
 - [rust by example](http://rustbyexample.com/)
