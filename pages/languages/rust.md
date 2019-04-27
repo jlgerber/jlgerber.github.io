@@ -1,3 +1,5 @@
+[Back to Languages](../languages.md)
+
 ### Rust<span class="tag" data-tag-name="rust"></span>
 Rust is my new favorite language (as of this writing). It mixes Haskell concepts liked algebraic datatypes, pattern matching, and type classes, with c concepts like explicit memory management and zero overhead abstractions, with its own take on managing mutability and ownership. 
 
