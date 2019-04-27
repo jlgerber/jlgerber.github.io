@@ -89,12 +89,12 @@ tutorial out there.
 - [creating a basic web service in rust](http://hermanradtke.com/2016/05/16/creating-a-basic-webservice-in-rust.html)<span class="tag" data-tag-name="tutorial"></span><span class="tag" data-tag-name="web"></span>
 - [creating a rust function that accepts string or str](http://hermanradtke.com/2015/05/06/creating-a-rust-function-that-accepts-string-or-str.html)
 
-###### [error handling in rust](https://doc.rust-lang.org/book/error-handling.html#the-try-macro)<span class="tag" data-tag-name="5star"></span>
+- [error handling in rust](https://doc.rust-lang.org/book/error-handling.html#the-try-macro)<span class="tag" data-tag-name="5star"></span>
 - [rust error handling](http://blog.burntsushi.net/rust-error-handling/)<span class="tag" data-tag-name="5star"></span>
 - [set up emacs for rust development](http://julienblanchard.com/2016/fancy-rust-development-with-emacs/)
 - [setting up local crates](https://gillesleblanc.wordpress.com/2014/10/10/using-a-local-crate-with-cargo/)
 - [string vs str in functions](http://hermanradtke.com/2015/05/03/string-vs-str-in-rust-functions.html)
 - [using Copy on Write for optional allocation](http://hermanradtke.com/2015/05/29/creating-a-rust-function-that-returns-string-or-str.html)<span class="tag" data-tag-name="5star"></span>
 - [The Guide to Rust Strings](http://www.steveklabnik.com/rust-issue-17340/)
-- [writing an OS in rust]https://os.phil-opp.com/)<span class="tag" data-tag-name="tutorial"></span><span class="tag" data-tag-name="rust"></span><span class="tag" data-tag-name="os"></span>
+- [writing an OS in rust](https://os.phil-opp.com/)<span class="tag" data-tag-name="tutorial"></span><span class="tag" data-tag-name="rust"></span><span class="tag" data-tag-name="os"></span>
 - [more on borrowing, lifetimes, and moves](https://medium.com/@bugaevc/understanding-rust-ownership-borrowing-lifetimes-ff9ee9f79a9c#.s9rmhcok1)
