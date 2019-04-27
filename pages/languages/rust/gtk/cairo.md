@@ -1,4 +1,4 @@
-# rustyview
+# Creating a Surface
 For rustyview, I want to be able to create a grey background via cairo so I dont have to load an image. Lets see we are going to do that.
 
 I believe that I can use the create_similar call to create a cairo surface.
