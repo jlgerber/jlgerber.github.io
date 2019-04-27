@@ -64,7 +64,7 @@ I try and update this list from time to time
     - [memcached](https://github.com/jaysonsantos/bmemcached-rs)
 #### Videos
 - regex
-    - [regex in rust](rust/videos/main.md)
+    - [regex in rust](rust/videos.md)
 #### Resources
 
 - [rust by example](http://rustbyexample.com/)
