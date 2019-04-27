@@ -13,17 +13,8 @@ Rust is my new favorite language (as of this writing). It mixes Haskell concepts
 - [Learning Rust](https://github.com/ctjhoa/rust-learning)
 - [rustup](https://github.com/rust-lang-nursery/rustup.rs) - working with multiple versions of rust
 
-#### Resources
 
-- [rust by example](http://rustbyexample.com/)
-- [rust design patterns](https://github.com/nrc/patterns)
-- [rust guidelines](http://aturon.github.io/)
-- [rustcamp 2015](http://confreaks.tv/events/rustcamp2015)
-- [rust learning](https://github.com/ctjhoa/rust-learning)
-- [rustlings](https://github.com/carols10cents/rustlings)
-
-#### Crates
-
+#### Crates of note
 - [zeromq rust](https://github.com/erickt/rust-zmq)
 - [ssh2](https://github.com/alexcrichton/ssh2-rs)
 - [low level networking](https://github.com/libpnet/libpnet)
@@ -33,12 +24,12 @@ Rust is my new favorite language (as of this writing). It mixes Haskell concepts
     - [bzip2](https://github.com/alexcrichton/bzip2-rs)
 - cli
     - structopt
-        - [crate](https://docs.rs/structopt/0.2.15/structopt/)
-        - [github](https://github.com/TeXitoi/structopt)
+        - [docs](https://docs.rs/structopt/0.2.15/structopt/)
+        - [repo](https://github.com/TeXitoi/structopt)
     - clap
-        - [crate](https://docs.rs/clap/2.33.0/clap/)
         - [webpage](https://clap.rs/)
-        - [github](https://github.com/clap-rs/clap)
+        - [docs](https://docs.rs/clap/2.33.0/clap/)
+        - [repo](https://github.com/clap-rs/clap)
     - [docopt](https://github.com/docopt/docopt.rs)
 - [memcached](https://github.com/jaysonsantos/bmemcached-rs)
 - [rust cpython](https://github.com/dgrunwald/rust-cpython)
@@ -53,9 +44,26 @@ Rust is my new favorite language (as of this writing). It mixes Haskell concepts
     - [serde~json~ crate documentation](https://serde-rs.github.io/json/serde_json/index.html)
     - [using serde JSON](https://github.com/serde-rs/json)
 - Parsers
+    - pest - my go to parser for most things. 
+        - [website](https://pest.rs/)
+        - [docs](https://docs.rs/pest/2.1.1/pest/)
+        - [book](https://pest.rs/book/)
+    - nom (parser combinator which is super popular)
+        - [docs](https://docs.rs/nom/5.0.0-alpha1/nom/)
+        - [repo](https://github.com/Geal/nom)
+        - [book](https://stevedonovan.github.io/rust-gentle-intro/nom-intro.html)
     - [combine](https://marwes.github.io/combine/combine/index.html)<span class="tag" data-tag-name="5star"></span>
 - Formatting
     - [prettytable-rs console table printing](https://github.com/phsym/prettytable-rs)
+
+#### Resources
+
+- [rust by example](http://rustbyexample.com/)
+- [rust design patterns](https://github.com/nrc/patterns)
+- [rust guidelines](http://aturon.github.io/)
+- [rustcamp 2015](http://confreaks.tv/events/rustcamp2015)
+- [rust learning](https://github.com/ctjhoa/rust-learning)
+- [rustlings](https://github.com/carols10cents/rustlings)
 
 #### podcasts
 
