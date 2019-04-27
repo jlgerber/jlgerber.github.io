@@ -30,7 +30,7 @@ application.run(&args);
 ```
 
 # Bringing Window to the Front
-After creating an application, you probably want the main window to raise to the front. This can be achieved by calling `present()` on the window.
+After creating an application, you probably want the main window to raise to the front. This can be achieved by calling `present()` on the window. WHOOPS. The following code makes it impossible to access menu items. Dont do this until they fix the bug. 
 
 ```rust
 let application = Application::new(
