@@ -31,6 +31,14 @@ Rust is my new favorite language (as of this writing). It mixes Haskell concepts
     - [zip](https://github.com/slackito/zip)
     - [tar](https://github.com/alexcrichton/tar-rs)
     - [bzip2](https://github.com/alexcrichton/bzip2-rs)
+- cli
+    - structopt
+        - [crate](https://docs.rs/structopt/0.2.15/structopt/)
+        - [github](https://github.com/TeXitoi/structopt)
+    - clap
+        - [crate](https://docs.rs/clap/2.33.0/clap/)
+        - [webpage](https://clap.rs/)
+        - [github](https://github.com/clap-rs/clap)
     - [docopt](https://github.com/docopt/docopt.rs)
 - [memcached](https://github.com/jaysonsantos/bmemcached-rs)
 - [rust cpython](https://github.com/dgrunwald/rust-cpython)
