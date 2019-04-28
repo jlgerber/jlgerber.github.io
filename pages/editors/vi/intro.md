@@ -90,12 +90,13 @@ To go back where you came from, press `<Ctrl-o>`. To go forward again, press `<C
 When programming, the `%` key is essential. It will bounce back and forth between matching `(`, `[` or `{`. 
 
 ### Substitution
-We use the very familiar `:/old/new/` form to replace the first occurence of`old` in the line with `new`.
+Substitution should look familiar as it uses the sed form.
 
-To replace every occurence of `old` in the line with `new`, type `:s/old/new/g`.
+Key | Effect
+--- | ---
+`:s/old/new/` | replace first occurence of `old` on current line with `new`
+`:s/old/new/g` | replace all occurences of `old` on current line with `new`
+`:l1,l2s/old/new/g` | replace all occurences of `old` between line `l1` and line `l2` with `new`
+`:%s/old/new/g` | replace all occurences of `old` with `new` in file
+`"%s/old/new/gc` | replace all occurences of `old` with `new` in file but prompt for each replacement
 
-To replace every occurence between two lines, type `l1,l2s/old/new/g` (eg 100,103s/thee/the/g`
-
-To replace every occurence within the whole file, type `%s/old/new/g`.
-
-To replace every occurence within a whole file, but be prompted before each substitution, type `%s/old/new/gc`
