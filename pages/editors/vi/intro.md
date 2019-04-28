@@ -17,6 +17,8 @@ e | move to end of current word
 $ | move to end of line
 0 | move to start of line
 ^ | move to first character of first word on line
+G | move to the end of the file
+gg | move to the top of the file
 
 ### Deleting
 
@@ -65,3 +67,6 @@ Press `r<char>` to replace the character under the cursor with <char>. Eg `rx` r
  In practice, to correct `thwf`, navigate to the `w`, press `ce` and then type `is` and <esc> to get out of edit mode.
  
  You may also use the `c` motion key with a count, just like `d`
+
+## File Status
+press `Ctrl-g` to get the current file's statuse
