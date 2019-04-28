@@ -202,12 +202,14 @@ cpoptions+=$ | mark the end of an edit with $. (eg `cw` would put a `$` at the e
 in the mini editor you can get a list of commands which match what you have typed so far by typing `Ctrl d`. You can complete your command by typing `<TAB>`.
 
 # Marks
-You can set bookmarks if you want using `mCHAR`. you can go to a mark with `'CHAR`. You can list marks with `:marks`
+vim has bookmarks, although they are not visible without a plugin.
+
 Command | Effect
 --- | ---
 `mCHAR` | set a bookmark on the current line (eg `ma`)
 `'CHAR | go to a previously set bookmark (eg `'a`)
 `:marks` | list bookmarks
+`''` | go back to the last place you were (auto bookmark)
 
 # Opening URLs in Web browser from Vim
 Put your curor over a url and type `gx`
