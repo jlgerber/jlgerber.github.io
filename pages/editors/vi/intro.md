@@ -34,8 +34,10 @@ In the previous section on deleting, the `d` key is the operator, and the `w`,`e
 For example `2w` moves forward 2 words. You can insert a `count` before a `motion` to modify the effect. 
 
 ```sh
+# delete 2 words 
 d2w
-d2x
+# delete two lines forward
+d2$
 ```
 
 ## Basic Editing
