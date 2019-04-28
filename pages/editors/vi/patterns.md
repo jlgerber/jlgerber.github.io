@@ -3,6 +3,8 @@ title: patterns
 layout: page
 ---
 
+[return to editors](../../editors.html)
+
 # Patterns
 This section is devoted to Vim pattern matching. 
 
