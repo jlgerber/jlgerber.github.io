@@ -52,6 +52,7 @@ U | return current line to prior state
 ctrl r | redo 
 
 ## Basic Editing
+
 ### Insert Mode
 Key | Effect
 --- | ---
@@ -62,11 +63,19 @@ o | open the line below the current line, inserting a newline, and enter edit mo
 O | open the line above the current line, inserting a new line, and enter edit mode
 
 `a`, `i`, `A`, `o`, and `O` all go into insert mode. The only difference is where the characters are inserted.
+
 ### Replace Mode
 typing `R` enters **replace** mode. This allows you to write over characters rather than insert new characters.
 
+### Visual Marking Mode
+To enter into visual mode (like emacs marking mode), type `v`, then use your motion keys to highlight a block of text.
+If you highlight lines and type `:w FILENAME`, vi will save the highlighted lines to `FILENAME`. (note that it will save complete lines, regardless of how much text you have highlighted on the first or last line)
+
+In visual mode, you can, for instance, use `d`, to delete the selected text.
+### Yank command
+if you mark text in Visual Marking mode, you can copy it by pressing `y`. This will save it to the buffer. yank may be used as an operator. For example `yw` yanks one word.
 ### Put command
-Press `p` to put the previously deleted text after the cursor. If you delete a line with `dd`, `p` will put the deleted line on the line below the one that the cursor is on now.
+Press `p` to put the previously yanked or deleted text after the cursor. If you go into visual marking mode (v), select some text, and press `y`, then navigate elsewhere and press `p`, you will paste the yanked text at the new location. If you delete a line with `dd`, `p` will put the deleted line on the line below the one that the cursor is on now.
 
 ### Replace command 
 Press `r<char>` to replace the character under the cursor with <char>. Eg `rx` replaces the character under the cursor with `x`. Note that you will be in nav mode after you type the replacement character; you will not be in edit mode.
@@ -109,17 +118,25 @@ Key | Effect
 `:%s/old/new/g` | replace all occurences of `old` with `new` in file
 `"%s/old/new/gc` | replace all occurences of `old` with `new` in file but prompt for each replacement
 
-## Executing a command
+## More Commands
+### Executing a command
 type `:!` plus the command to execute a command in a shell and return the results in a separate buffer.
 
-## Saving a buffer to a file
+### Saving a buffer to a file
 Type `:w FILENAME` to save the buffer as FILENAME.
-## Visual Marking Mode
-To enter into visual mode (like emacs marking mode), type `v`, then use your motion keys to highlight a block of text.
-If you highlight lines and type `:w FILENAME`, vi will save the highlighted lines to `FILENAME`. (note that it will save complete lines, regardless of how much text you have highlighted on the first or last line)
 
-In visual mode, you can, for instance, use `d`, to delete the selected text.
-## Insert contents of File at Cursor
+### Insert contents of File at Cursor
 To insert the contents of a file at the cursor, type `:r FILENAME`.
 
-You can also read the output of an external command. For instance, `:r !ls` would read the contents of ls into the current file at the cursor.
+You can also read the output of an external command. For instance, `:r !ls` would read the contents of ls into the current 
+file at the cursor.
+
+## Set Command
+You can configure vi behavior using the `:set` command. For instance, to make searches case insensitive, type `:set ic`. This turns on ignore case mode. To turn case sensitivity back on, type `:set noic`.
+
+To toggle the value of a setting, prefix it with `inv`. For example `:set invic`.
+
+NOTE: if you want to ignore case for one search, just append a `\c` to your search. For example `/foo\c`
+
+
+
