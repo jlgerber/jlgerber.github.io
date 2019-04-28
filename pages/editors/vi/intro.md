@@ -152,5 +152,6 @@ hls 'hlsearch' | highlight all matching phrases
 nohls | turn off highlighting matching phrases
 invhls | toggle highlighting
 
-
+# Command Completion
+in the mini editor you can get a list of commands which match what you have typed so far by typing `Ctrl d`. 
 
