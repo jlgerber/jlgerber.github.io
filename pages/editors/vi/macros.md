@@ -1,3 +1,5 @@
+[return to editors](../../editors.md)
+
 # Vim Macros
 
 Command | Effect
