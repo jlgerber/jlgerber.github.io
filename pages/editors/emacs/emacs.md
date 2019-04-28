@@ -1,3 +1,5 @@
+[return to editors](../../editors.md)
+
 ---
 layout: page
 title: Emacs
