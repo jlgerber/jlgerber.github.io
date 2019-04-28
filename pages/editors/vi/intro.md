@@ -53,3 +53,8 @@ Key | Effect
 --- | ---
 i | insert text after the cursor
 A | move to end of line and enter edit mode
+
+### Put command
+Press `p` to put the previously deleted text after the cursor
+### Replace command 
+Press `r<char>` to replace the character under the cursor with <char>. Eg `rx` replaces the character under the cursor with `x`.
