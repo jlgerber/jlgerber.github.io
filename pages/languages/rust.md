@@ -1,11 +1,16 @@
-[Back to Languages](../languages.md)
+---
+layout: page
+title: rust
+---
+
+[Back to Languages](../languages.html)
 
 ### Rust<span class="tag" data-tag-name="rust"></span>
 Rust is my new favorite language (as of this writing). It mixes Haskell concepts liked algebraic datatypes, pattern matching, and type classes, with c concepts like explicit memory management and zero overhead abstractions, with its own take on managing mutability and ownership. 
 
 #### Internal Pages
 - gui
-    - [gtk](rust/gtk/intro.md)
+    - [gtk](rust/gtk/intro.html)
 
 #### Main Sites
 
@@ -68,7 +73,7 @@ I try and update this list from time to time
 #### Videos
 
 - regex
-    - [regex in rust](rust/videos.md)
+    - [regex in rust](rust/videos.html)
     
 #### Resources
 

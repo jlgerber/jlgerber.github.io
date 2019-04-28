@@ -10,8 +10,8 @@ From Maya to Houdini to Nuke, apis abound, both c++ and python. Additionally, we
 ### REZ
 Rez is a build / env system for software
 
-- [configuring rez](production_tools/rez/configuring_rez.md)
-- [notes](production_tools/rez/notes.md)
+- [configuring rez](production_tools/rez/configuring_rez.html)
+- [notes](production_tools/rez/notes.html)
 
 ### 2D
 
@@ -19,4 +19,4 @@ Rez is a build / env system for software
 
 ### Misc
 
-- [pandoc](production_tools/pandoc.md) is a tool used to convert between various formats including md, rst, and pdf
+- [pandoc](production_tools/pandoc.html) is a tool used to convert between various formats including.html, rst, and pdf

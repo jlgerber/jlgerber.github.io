@@ -1,4 +1,9 @@
-[return to editors](../../editors.md)
+---
+layout: page
+title: orgmode
+---
+
+[return to editors](../../editors.html)
 
 
 Org Mode Basic Usage

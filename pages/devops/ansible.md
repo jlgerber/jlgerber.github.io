@@ -295,7 +295,7 @@ ansible-galaxy init role_name
 ```
 Calling init will produce the expand the template in the current directory. Issuing this command requires access to the internet by default,as the template is defined externally. Here is what will be created by default:
 ```
-README.md
+README.html
 .travis.yml
 defaults/
     main.yml

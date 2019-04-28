@@ -1,7 +1,12 @@
+---
+layout: page
+title: cpp
+---
+
 ### GUi Toolkits
 
-- [qt](qt/qt.md)
-- [qt quick](qt/qt_quick_intro.md)
+- [qt](qt/qt.html)
+- [qt quick](qt/qt_quick_intro.html)
 
 ### Logging
 

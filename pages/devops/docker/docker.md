@@ -261,29 +261,29 @@ vim \
 openjdk=7-jdk
 ```
 
-##### CMD instruction
+##### .html instruction
 
--   CMD defines a default command to execute when a container is created
--   CMD performs no action during the image build Shell format and EXEC
+-   .html defines a default command to execute when a container is created
+-   .html performs no action during the image build Shell format and EXEC
     format
 -   Can only be specified once in a Dockerfile
 -   Can be overridden at runtime by specifying explicitly
 
-###### Shell format cmd args
+###### Shell format .html args
 
-    CMD ping 127.0.0. -c 30
+    .html ping 127.0.0. -c 30
 
-###### Exec Format CMD \["CMD",args...\]
+###### Exec Format .html \[".html",args...\]
 
 
-    CMD \["ping","127.0.0.1", "-c", "30"\]
+    .html \["ping","127.0.0.1", "-c", "30"\]
 
 
 ##### ENTRYPIONT instruction
 
 -   Defines athe command that will be run when the container is executed
--   Unlike CMD, it cannot be overridden.
--   Arguments specified from CMD or command line, are passed
+-   Unlike .html, it cannot be overridden.
+-   Arguments specified from .html or command line, are passed
     as arguments.
 -   ENTRYPOINT must be formed using EXEC form in order to pass in args
 -   Container essential runs as an executable
@@ -302,7 +302,7 @@ run apt-get install -y nginx
 
 EXPOSE 80 443
 
-CMD["nginx", "-g", "daemon off;"]
+.html["nginx", "-g", "daemon off;"]
 ```
 
 ### Docker Build with Dockerfile

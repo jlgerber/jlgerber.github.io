@@ -1,4 +1,9 @@
-[back to intro](intro.md)
+---
+layout: page
+title: cairo
+---
+
+[back to intro](intro.html)
 # Creating a Surface
 For rustyview, I want to be able to create a grey background via cairo so I dont have to load an image. Lets see we are going to do that.
 

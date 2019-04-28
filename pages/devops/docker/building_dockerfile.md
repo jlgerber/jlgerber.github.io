@@ -7,12 +7,12 @@
 - [COPY Instruction](#copy-instruction)
     - [Example](#example)
 - [Defining what a container executes when it starts](#defining-what-a-container-executes-when-it-starts)
-    - [CMD Instruction](#cmd-instruction)
+    - [.html Instruction](#.html-instruction)
     - [ENTRYPOINT Instruction](#entrypoint-instruction)
         - [Example](#example)
-            - [CMD Example](#cmd-example)
+            - [.html Example](#.html-example)
             - [ENTRYPOINT Example](#entrypoint-example)
-            - [CMD with ENTRYPOINT Example](#cmd-with-entrypoint-example)
+            - [.html with ENTRYPOINT Example](#.html-with-entrypoint-example)
 - [HEALTHCHECK Instruction](#healthcheck-instruction)
 - [ONBUILD Instruction](#onbuild-instruction)
 - [METADATA instructions](#metadata-instructions)
@@ -164,20 +164,20 @@ COPY foo bar
 
 # Defining what a container executes when it starts
 There are two instructions that may work together or independently.
-## CMD Instruction
+## .html Instruction
 define a default command.
 Or, default parameters to ENTRYPOINT
 ```
-CMD <command parameter ...> or <parameter parameter ...>
-CMD ["command>", "<parametr">, ...]
+.html <command parameter ...> or <parameter parameter ...>
+.html ["command>", "<parametr">, ...]
 ```
-Typically you use a CMD instruction when you want to define a default instruction to be used if the user doesn't specify a command, but allow for the user to execute an other command.
+Typically you use a .html instruction when you want to define a default instruction to be used if the user doesn't specify a command, but allow for the user to execute an other command.
 
 Two forms of syntax: shell and exec (preferred)
 
 Exec form used for default parameters
 
-Command line arguments override CMD
+Command line arguments override .html
 
 ## ENTRYPOINT Instruction
 ```
@@ -195,7 +195,7 @@ Two forms of syntax: shell and exec (preferred)
 Shell form limits controlusing Linux signals. Using the shell, the shell becomes pid 1. Using the exec form, the command itself becomes pid 1.
 
 ### Example
-#### CMD Example
+#### .html Example
 Dockerfile
 ```
 FROM debian::jessie-slim
@@ -208,7 +208,7 @@ RUN apt-get update   && \
 
 ENV PATH "$PATH:/usr/games"
 
-CMD ["cowsay", "To improve is to change: to be perfect is to change often"]
+.html ["cowsay", "To improve is to change: to be perfect is to change often"]
 ```
 
 Lets build the image
@@ -222,7 +222,7 @@ docker container run demo
 ```
 
 We get a cow.
-Because we used a CMD, we can override the command.
+Because we used a .html, we can override the command.
 
 ```
 docker container run demo screenfetch -E
@@ -230,7 +230,7 @@ docker container run demo screenfetch -E
 
 #### ENTRYPOINT Example
 
-If we replace the CMD instruction with an ENTRYPOINT instruction in the Dockerfile:
+If we replace the .html instruction with an ENTRYPOINT instruction in the Dockerfile:
 ```
 FROM debian::jessie-slim
 
@@ -263,8 +263,8 @@ docker container run demo -f tux "if you're going through hell: keep going"
 
 We cannot override the command itself.
 
-#### CMD with ENTRYPOINT Example
-We will make a change to the dockerfile to see how CMD and ENTRYPOINT work together:
+#### .html with ENTRYPOINT Example
+We will make a change to the dockerfile to see how .html and ENTRYPOINT work together:
 
 ```
 FROM debian::jessie-slim
@@ -277,7 +277,7 @@ RUN apt-get update   && \
 
 ENV PATH "$PATH:/usr/games"
 
-CMD ["-f", "tux", "Im a panguin dude"]
+.html ["-f", "tux", "Im a panguin dude"]
 
 ENTRYPOINT ["cowsay"]
 ```
@@ -294,11 +294,11 @@ And without:
 ```
 docker container run demo
 ```
-In the second case, the arguments specified in the CMD are appended to the ENTRYPOINT
+In the second case, the arguments specified in the .html are appended to the ENTRYPOINT
 
 # HEALTHCHECK Instruction
 ```
-HEALTHCHECK [opitons] CMD <command>
+HEALTHCHECK [opitons] .html <command>
 HEALTHCHECK NONE
 ```
 instruction defines command to test container health.
@@ -412,7 +412,7 @@ EXPOSE 80
 # Define entrypoint and default parameters
 ENTRYPOINT ["/usr/local/nginx/sbin/nginx"]
 # start nginx in the forground
-CMD ["-g", "daemon off;"]
+.html ["-g", "daemon off;"]
 ```
 #### Build the dockerfile
 ```shell
@@ -495,7 +495,7 @@ EXPOSE 80
 
 # Define entrypoint and default
 ENTRYPOINT ["/sr/local/nginx/sbin/nginx"]
-CMD ["-g","daemon off;"]
+.html ["-g","daemon off;"]
 ```
 
 

@@ -9,17 +9,17 @@ I use Linux at work, and at home, but my main programming laptop right now is my
 
 ### OS X
 
-- [Notes](oses/osx.md)
+- [Notes](oses/osx.html)
 
 ### Linux
 
-- [log daemons](oses/linux/logDaemons.md)
+- [log daemons](oses/linux/logDaemons.html)
 - ssh
-    - [intro](oses/linux/ssh.md)
-    - [configring ssh server](oses/linux/configuring_openSSH_server.md)
+    - [intro](oses/linux/ssh.html)
+    - [configring ssh server](oses/linux/configuring_openSSH_server.html)
 - Commands
-    - [netstat](oses/linux/netstat.md) - Network Statistics.
-    - [arp](oses/linux/arp.md) - Interogate network table.
-    - [Disk Commands](oses/linux/linux-disk.md) - Various commands to work with logical and physical devices.
+    - [netstat](oses/linux/netstat.html) - Network Statistics.
+    - [arp](oses/linux/arp.html) - Interogate network table.
+    - [Disk Commands](oses/linux/linux-disk.html) - Various commands to work with logical and physical devices.
 
 

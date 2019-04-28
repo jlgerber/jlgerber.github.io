@@ -1,4 +1,9 @@
-[return to editors](../../editors.md)
+---
+layout: page
+title: howto
+---
+
+[return to editors](../../editors.html)
 
 
 Formats
@@ -11,11 +16,11 @@ Markdown
 
 #### Org mode can export to markdown
 
--   C-c C-e m m (org-md-export-to-markdown)
+-   C-c C-e m m (org.html-export-to-markdown)
     -   Export as a text file written in Markdown syntax. For an Org
-        file, myfile.org, the resulting file will be myfile.md. The file
+        file, myfile.org, the resulting file will be myfile.html. The file
         will be overwritten without warning.
--   C-c C-e m M (org-md-export-as-markdown)
+-   C-c C-e m M (org.html-export-as-markdown)
     -   Export to a temporary buffer. Do not create a file.
 -   C-c C-e m o
     -   Export as a text file with Markdown syntax, then open it.
@@ -51,8 +56,8 @@ sed
     -   pipe names into sed
     -   used p;s to return the original and modified string
     -   pipe to xargs, use -n2 followed by command
--   Example ( take all filename.md.org files and get rid of .md )
+-   Example ( take all filename.html.org files and get rid of .html )
 
     ``` {.sed}
-    ls -1 *md.org | sed 'p;s/\.md//' | xargs -n2 mv
+    ls -1 .html.org | sed 'p;s/\.html//' | xargs -n2 mv
     ```

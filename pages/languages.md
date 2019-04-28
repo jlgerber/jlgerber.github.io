@@ -7,13 +7,13 @@ description: A journey through the many languages I have known
 
 ### Lets talk Languages I use frequently these days
 
-* [*rust*](languages/rust.md) :
+* [*rust*](languages/rust.html) :
     My new favorite language I do admit.
-* [*python*](languages/python.md) :
+* [*python*](languages/python.html) :
     Bastion of production, but sadly slow and dynamically typed.
 
 ### And Languages I use periodically
-* [*c++*](languages/cpp.md)
+* [*c++*](languages/cpp.html)
 * go :
   For quite a while, I was big on go, until I discovered Rust...
 * javascript

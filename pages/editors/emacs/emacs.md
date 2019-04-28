@@ -1,4 +1,9 @@
-[return to editors](../../editors.md)
+---
+layout: page
+title: emacs
+---
+
+[return to editors](../../editors.html)
 
 
 # Hotkeys

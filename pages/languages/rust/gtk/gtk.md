@@ -1,4 +1,9 @@
-[back to intro](intro.md)
+---
+layout: page
+title: gtk
+---
+
+[back to intro](intro.html)
 # Creating an Application in gtk
 There are a number of ways of creating an application in gtk-rs. You can create an `Application`, then create a `Window`, but the best way of doing this is to use the `gtk::ApplicationWindow` like so:
 

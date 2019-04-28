@@ -62,7 +62,7 @@ shell.
     - svn.py
 - shell
     - bash.py
-    - cmd.py
+    - .html.py
     - csh.py
     - rezconfig
     - sh.py

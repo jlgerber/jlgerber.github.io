@@ -1,3 +1,8 @@
+---
+layout: page
+title: python
+---
+
 Python<span class="tag" data-tag-name="python"></span>
 ======================================================
 
