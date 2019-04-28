@@ -72,13 +72,25 @@ Press `r<char>` to replace the character under the cursor with <char>. Eg `rx` r
 ## File Status
 press `Ctrl-g` to get the current file's status
 
-## Search Command
+## Searching and Replacing 
+### Search Command
 In normal mode, press `/` to go into search forward mode. Your cursor will jump to the minieditor and you will be able to type a string to search for and type ENTER. 
 
 To search for the next occurence of the string, type `n`.
 
-To search backwarads for the previous occurence of the string, type `N`.
+To search backwards for the previous occurence of the string, type `N`.
 
 To turn off the color highlight, press `:noh`
 
+### Search Backwards Command
 In normal mode, press `?` to enter search backwards mode. In backwards mode, `n` advances up the page, and `N` advances down the page - the opposite of '/' search mode.
+
+To go back where you came from, press `<Ctrl-o>`. To go forward again, press `<Ctrl-i>`
+### Search for matching (,[, or {
+When programming, the `%` key is essential. It will bounce back and forth between matching `(`, `[` or `{`. 
+
+### Substitution
+We use the very familiar `:/old/new/` form to replace the first occurence of`old` in the line with `new`.
+
+To replace every occurence of `old` in the line with `new`, type `:s/old/new/g`.
+
