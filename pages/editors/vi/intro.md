@@ -86,7 +86,7 @@ To turn off the color highlight, press `:noh`
 In normal mode, press `?` to enter search backwards mode. In backwards mode, `n` advances up the page, and `N` advances down the page - the opposite of '/' search mode.
 
 To go back where you came from, press `<Ctrl-o>`. To go forward again, press `<Ctrl-i>`
-### Search for matching (,[, or {
+### Search for matching (, [, or {
 When programming, the `%` key is essential. It will bounce back and forth between matching `(`, `[` or `{`. 
 
 ### Substitution
