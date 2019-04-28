@@ -21,11 +21,13 @@ Wnen you list buffers (`:ls`) you get a table with the following columns:
 
 ## Switching Buffers
 You can switch to a different buffer by typing `:b NUMBER` or ``:b NAME` (or `:buffer` but who likes to type more than they have to ?). You can use tab completion if you are attempting to switch by name.
+
 ## Deleting Buffers
 You can delete a buffer using the `:bd[elete]` command (ie `:bd` or `:bdelete`). Without any arguments, it will
 delete the current buffer. However, you can supply it with a number or name.
 
 ## Buffer Commands
+
 Command | Effect
 --- | ---
 `:ls` | list buffers
