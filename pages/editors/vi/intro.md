@@ -14,6 +14,7 @@ Key | Effect
 `k` | move up one character
 
 ## Basic Word Navigation
+
 Key | Effect
 --- | ---
 `w` | move right to the first char of the next word. Note that periods, commas, are considered words in their own right.
@@ -26,6 +27,7 @@ Key | Effect
 `gE` | move left to the end of the previous word, considering only whitespace as word delimiter
 
 ## Basic Page Navigation
+
 Key | Effect
 --- | ---
 `Ctrl f` | move forward one whole page
@@ -34,6 +36,7 @@ Key | Effect
 `ctrl u` | move back half page
 
 ## Basic Screen Navigation
+
 Key | Effect
 --- | ---
 `H` | First line of the screen
@@ -70,6 +73,7 @@ d$ | delete fro the cursor to the end of the line
 dd | delete the current line
 
 ## Motions
+
 Many commands consist of a operator, and a motion.
 In the previous section on deleting, the `d` key is the operator, and the `w`,`e` and `$` are motion keys. The motion keys by themselves produce motion, which is why they are called motion keys. Motion keys may also be prefixed by a `count`, which executes the motion key `count` times. 
 
@@ -82,6 +86,7 @@ d2w
 2dd
 ```
 ## Undo & redo
+
 Key | Effect
 --- | ---
 u | undo last edit
@@ -91,6 +96,7 @@ ctrl r | redo
 ## Basic Editing
 
 ### Insert && Append Modes
+
 Key | Effect
 --- | ---
 i | (insert mode) insert text after the cursor
@@ -103,22 +109,30 @@ O | open the line above the current line, inserting a new line, and enter edit m
 `a`, `i`, `A`, `o`, and `O` all go into insert mode. The only difference is where the characters are inserted.
 
 ### Replace Mode
+
 typing `R` enters **replace** mode. This allows you to write over characters rather than insert new characters.
 
 ### Visual Marking Mode
+
 To enter into visual mode (like emacs marking mode), type `v`, then use your motion keys to highlight a block of text.
 If you highlight lines and type `:w FILENAME`, vi will save the highlighted lines to `FILENAME`. (note that it will save complete lines, regardless of how much text you have highlighted on the first or last line)
 
 In visual mode, you can, for instance, use `d`, to delete the selected text.
+
 ### Yank command
+
 if you mark text in Visual Marking mode, you can copy it by pressing `y`. This will save it to the buffer. yank may be used as an operator. For example `yw` yanks one word.
+
 ### Put command
+
 Press `p` to put the previously yanked or deleted text after the cursor. If you go into visual marking mode (v), select some text, and press `y`, then navigate elsewhere and press `p`, you will paste the yanked text at the new location. If you delete a line with `dd`, `p` will put the deleted line on the line below the one that the cursor is on now.
 
 ### Replace command 
+
 Press `r<char>` to replace the character under the cursor with <char>. Eg `rx` replaces the character under the cursor with `x`. Note that you will be in nav mode after you type the replacement character; you will not be in edit mode.
  
  ### Change operator
+ 
   `c` is the change operator. It may be used with motion keys, `w`, `e`, `$`. For example `ce` deletes the characters under the cursor through the end of the word and puts you into edit mode. 
  
  In practice, to correct `thwf`, navigate to the `w`, press `ce` and then type `is` and <esc> to get out of edit mode.
@@ -126,11 +140,13 @@ Press `r<char>` to replace the character under the cursor with <char>. Eg `rx` r
  You may also use the `c` motion key with a count, just like `d`
 
 ## File Status
+
 press `Ctrl-g` to get the current file's status
 
 ## Searching and Replacing 
 
 ### Search Command
+
 In normal mode, press `/` to go into search forward mode. Your cursor will jump to the minieditor and you will be able to type a string to search for and type ENTER. 
 
 To search for the next occurence of the string, type `n`.
@@ -140,10 +156,13 @@ To search backwards for the previous occurence of the string, type `N`.
 To turn off the color highlight, press `:noh`
 
 ### Search Backwards Command
+
 In normal mode, press `?` to enter search backwards mode. In backwards mode, `n` advances up the page, and `N` advances down the page - the opposite of '/' search mode.
 
 To go back where you came from, press `<Ctrl-o>`. To go forward again, press `<Ctrl-i>`
+
 ### Search for Current Word
+
 With your cursor over a word, if you type `*`, you will start searching for the current word. It is as if you went `/` and typed the work name. Sweet.
 
 Of course, if you want to search backwards from the get go, use `#` instead of `*` and `n` will take you backwards...
@@ -151,9 +170,11 @@ Of course, if you want to search backwards from the get go, use `#` instead of `
 Both of these searches include word boundaries, so they are exact match searches. If you want to select partials, put a `g` in front of `*` or `#`. Eg `g*`
 
 ### Search for matching (, [, or {
+
 When programming, the `%` key is essential. It will bounce back and forth between matching `(`, `[` or `{`. 
 
 ### Substitution
+
 Substitution should look familiar as it uses the sed form.
 
 Key | Effect
@@ -165,19 +186,24 @@ Key | Effect
 `"%s/old/new/gc` | replace all occurences of `old` with `new` in file but prompt for each replacement
 
 ## More Commands
+
 ### Executing a command
+
 type `:!` plus the command to execute a command in a shell and return the results in a separate buffer.
 
 ### Saving a buffer to a file
+
 Type `:w FILENAME` to save the buffer as FILENAME.
 
 ### Insert contents of File at Cursor
+
 To insert the contents of a file at the cursor, type `:r FILENAME`.
 
 You can also read the output of an external command. For instance, `:r !ls` would read the contents of ls into the current 
 file at the cursor.
 
 ## Set Command
+
 You can configure vi behavior using the `:set` command. For instance, to make searches case insensitive, type `:set ic`. This turns on ignore case mode. To turn case sensitivity back on, type `:set noic`.
 
 To toggle the value of a setting, prefix it with `inv`. For example `:set invic`.
@@ -200,9 +226,11 @@ invhls | toggle highlighting
 cpoptions+=$ | mark the end of an edit with $. (eg `cw` would put a `$` at the end of the current word)
 
 # Command Completion
+
 in the mini editor you can get a list of commands which match what you have typed so far by typing `Ctrl d`. You can complete your command by typing `<TAB>`.
 
 # Marks
+
 vim has bookmarks, although they are not visible without a plugin.
 
 Command | Effect
@@ -213,7 +241,9 @@ Command | Effect
 `''` | go back to the last place you were (auto bookmark)
 
 # Opening URLs in Web browser from Vim
+
 Put your curor over a url and type `gx`
 
 # plugins we want
+
 - matchit.vim
