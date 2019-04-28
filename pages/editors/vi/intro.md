@@ -55,6 +55,8 @@ NUMBER G | move to the line number (number + G, eg 465G to go to line 465)
 `%` | When the cursor is over a { or a ( or a [, pressing `%` will jump to its pair
 `[[` | go to the next outer `{`
 `]]` | go to the previous outer `{`
+`][` | go to next outer closing `}`
+`[]` | go to previous outer closing `}`
 
 ### Deleting
 
@@ -199,6 +201,16 @@ cpoptions+=$ | mark the end of an edit with $. (eg `cw` would put a `$` at the e
 # Command Completion
 in the mini editor you can get a list of commands which match what you have typed so far by typing `Ctrl d`. You can complete your command by typing `<TAB>`.
 
+# Marks
+You can set bookmarks if you want using `mCHAR`. you can go to a mark with `'CHAR`. You can list marks with `:marks`
+Command | Effect
+--- | ---
+`mCHAR` | set a bookmark on the current line (eg `ma`)
+`'CHAR | go to a previously set bookmark (eg `'a`)
+`:marks` | list bookmarks
+
 # Opening URLs in Web browser from Vim
 Put your curor over a url and type `gx`
 
+# plugins we want
+- matchit.vim
