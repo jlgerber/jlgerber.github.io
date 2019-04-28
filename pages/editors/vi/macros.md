@@ -1,4 +1,9 @@
-[return to editors](../../editors.md)
+---
+layout: page
+title: macros
+---
+
+[return to editors](../../editors.html)
 
 # Vim Macros
 

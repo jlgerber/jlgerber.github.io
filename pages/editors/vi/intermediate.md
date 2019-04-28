@@ -1,4 +1,9 @@
-[return to editors](../../editors.md)
+---
+title: intermediate
+layout: page
+---
+
+[return to editors](../../editors.html)
 
 # Buffers
 

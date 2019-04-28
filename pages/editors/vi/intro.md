@@ -1,4 +1,10 @@
-[return to editors](../../editors.md)
+---
+layout: page
+title: intro to vim
+---
+
+[return to editors](../../editors.html)
+
 # vi / vim / gvim / nvim
 
 ## Repeat

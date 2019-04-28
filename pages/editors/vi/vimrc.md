@@ -1,4 +1,9 @@
-[return to editors](../../editors.md)
+---
+layout: page
+title: vimrc
+---
+
+[return to editors](../../editors.html)
 
 # .vimrc
 WHere is this `.vimrc` file located? It depends on which platform you are on. Type :help vimrc
