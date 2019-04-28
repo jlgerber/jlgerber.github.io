@@ -34,10 +34,12 @@ Command | Effect
 `:b NUMBER` | switch to the buffer with the number NUMBER (see `:ls`)
 `:b NAME` | switch to the buffer with the supplied name (tab completion works here)
 `:b#` | switch to the alternate buffer. (again see `:ls`)
-`:bd NUMBER [NUMBER...]` | delete one or more buffers by number
-`:bd NAME [NAME...]` | delete one or more buffers by name
-`#s,#ebd` | delete a range of buffers (eg `1,5bd` deletes 1 through 5)
-`%db` | delete all the buffers
+`:bd NUMBER [NUMBER...]` | delete one or more buffers by number (as long as they have not been modified)
+`:bd NAME [NAME...]` | delete one or more buffers by name (as long as they have not been modified)
+`#s,#ebd` | delete a range of buffers (eg `1,5bd` deletes 1 through 5) (as long as they have not been modified)
+`%db` | delete all the buffers (as long as they have not been modified)
+
+**Note:** Add a `!` to the end of your `bd` command to force delete buffers that have modifications
 
 # Dealing with Multiple Files
 
