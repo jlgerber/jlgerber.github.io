@@ -3,20 +3,20 @@ How to use a single vim instance?
 
 # Buffers
 Buffers may be tied to files, but they don't have to be. 
-Wnen you list buffers (:ls) you get a table with the following columns:
+Wnen you list buffers (`:ls`) you get a table with the following columns:
 - buffer number
-- buffer code (see :h ls for full detail)
-  - % buffer in current window
+- buffer code (see `:h ls` for full detail)
+  - `%` buffer in current window
   - `#` The alternate buffer for `:e #` and CTRL-^
-  - a active buffer. loaded and visible
-  - h hidden buffer. loaded but not displayed in a window
-  - - buffer with modifiable off
-  - _ a readonly buffer
-  - ? a terminal buffer without a job
-  - R a terminal buffer with a running job
-  - F a terminal buffer with a finished job
-  - + a modified buffer
-  - x a buffer with read errors
+  - `a` active buffer. loaded and visible
+  - `h` hidden buffer. loaded but not displayed in a window
+  - `-` buffer with modifiable off
+  - `_` a readonly buffer
+  - `?` a terminal buffer without a job
+  - `R` a terminal buffer with a running job
+  - `F` a terminal buffer with a finished job
+  - `+` a modified buffer
+  - `x` a buffer with read errors
 - buffer name
 - current active line of buffer
 
