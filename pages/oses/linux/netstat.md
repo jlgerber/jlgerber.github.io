@@ -1,3 +1,8 @@
+---
+layout: page
+title: netstat
+---
+
 ### Netstat
 
 #### Command Flags

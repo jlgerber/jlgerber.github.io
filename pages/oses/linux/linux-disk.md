@@ -1,3 +1,8 @@
+---
+layout: page
+title: linux-disk
+---
+
 ### Disk related commands
 #### Block Devices
 
