@@ -29,11 +29,14 @@ dd | delete the current line
 
 ## Motions
 Many commands consist of a operator, and a motion.
-In the previous section on deleting, the `d` key is the operator, and the `w`,`e` and `$` are motion keys. The motion keys by themselves produce motion, which is why they are called motion keys. Motion keys may also be prefixed by a `count`, which executes the motion key `count` times. For example `2w` moves forward 2 words. You can insert a `count` before a `motion` to modify the effect. 
+In the previous section on deleting, the `d` key is the operator, and the `w`,`e` and `$` are motion keys. The motion keys by themselves produce motion, which is why they are called motion keys. Motion keys may also be prefixed by a `count`, which executes the motion key `count` times. 
+
+For example `2w` moves forward 2 words. You can insert a `count` before a `motion` to modify the effect. 
 
 ```sh
 d2w
 d2x
+```
 
 ## Basic Editing
 
