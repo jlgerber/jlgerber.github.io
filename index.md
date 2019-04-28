@@ -9,9 +9,10 @@ description: A place I store information on topics that interest me
 
 Like all good main pages, this page is simply a link to other pages. Sigh
 
-* [Production Tools](pages/production_tools.html)
+* [Editors](pags/editors.md)
 * [Languages](pages/languages.html)
 * [Devops Tools](pages/devops.html)
+* [Production Tools](pages/production_tools.html)
 * [Personal projects](pages/personal_projects.html)
 * [Os Specifics](pages/os_specifics.html)
 
