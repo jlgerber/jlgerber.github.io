@@ -14,5 +14,9 @@ I have finger memories built up around emacs. But it has been quite a while sinc
 - [emacs howto](editors/emacs/howto.md)
 - [org mode](editors/emacs/org-mode.md)
 
-### vim
-- [vim](editors/vi/vim.md)
+### Vim
+I have started playing around with vim again. All of our systems are almost assured to have vim. Even the ones without emacs. And it is a very powerful editor in its own right. Plus, I really like neovim...
+
+- [Intro](editors/vi/intro.md)
+- [Intermediate](editors/vi/intermediate.md)
+- [macros](editors/vi/macros.md)
