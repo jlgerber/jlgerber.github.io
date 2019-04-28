@@ -1,9 +1,9 @@
----
+--
 layout: page
 title: arp
 ---
 
-[return to os specifics](../os_specifics.html)
+[return to os specifics](../../os_specifics.html)
 
 
 ### Arp
