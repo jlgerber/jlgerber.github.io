@@ -15,7 +15,8 @@ Key | Effect
 w | move to start of next word
 e | move to end of current word
 $ | move to end of line
-d
+0 | move to start of line
+^ | move to first character of first word on line
 
 ### Deleting
 
@@ -36,9 +37,15 @@ For example `2w` moves forward 2 words. You can insert a `count` before a `motio
 ```sh
 # delete 2 words 
 d2w
-# delete two lines forward
-d2$
+# delete two lines
+2dd
 ```
+## Undo & redo
+Key | Effect
+--- | ---
+u | undo last edit
+U | return current line to prior state
+ctrl r | redo 
 
 ## Basic Editing
 
