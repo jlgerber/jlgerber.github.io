@@ -17,6 +17,9 @@ Wnen you list buffers (`:ls`) you get a table with the following columns:
 - buffer name
 - current active line of buffer
 
+## Switching Buffers
+You can switch to a different buffer by typing `:b NUMBER` or ``:b NAME` (or `:buffer` but who likes to type more than they have to ?). You can use tab completion if you are attempting to switch by name.
+
 ## Buffer Commands
 Command | Effect
 --- | ---
@@ -25,6 +28,9 @@ Command | Effect
 :bn or :bnext | advance to the next buffer
 :bf or :bfirst | rewind to the first buffer
 :bp :bprevious | activate previous buffer
+:b NUMBER | switch to the buffer with the number NUMBER (see `:ls`)
+:b NAME | switch to the buffer with the supplied name (tab completion works here)
+`:b#` | switch to the alternate buffer. (again see `:ls`)
 
 # Dealing with Multiple Files
 
