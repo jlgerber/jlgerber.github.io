@@ -12,7 +12,7 @@ We can disable case sensitivity for a pattern match using `:set ignorecase`. Thi
 Vim has a setting called **smartcase** which attempts to predict our intentions. When active, Vim will treat searches as case insensitive unless a capital letter appears in the pattern; then it treats the search as case sensitive. You can set smartcase using `:set smartcase`. Note that both **smartcase** and **ignorecase** may be active. How they interact may be summed up in the following table
 
 Pattern | **ignorecase** | **smartcase** | Matches
---- | --- | --- | ===
+--- | --- | --- | ---
 foo | off | - | foo
 foo | on | - | foo Foo FOO
 foo | on | on | foo Foo FOO
