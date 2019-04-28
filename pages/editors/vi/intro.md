@@ -1,4 +1,7 @@
 # vi
+## Repeat
+Repeat the last command by typing the `.` character.
+e
 ## Basic navigation
 
 Key | Effect
@@ -53,12 +56,13 @@ ctrl r | redo
 
 ## Basic Editing
 
-### Insert Mode
+### Insert && Append Modes
 Key | Effect
 --- | ---
-i | insert text after the cursor
-A | move to end of line and enter edit mode
-a | move one char to the right and go into edit mode. Typing will insert text.
+i | (insert mode) insert text after the cursor
+I | (insert mode) start insert mode at the beginning of the current line
+a | (append mode) move one char to the right and go into edit mode. Typing will insert text.
+A | (append mode) move to end of line and enter edit mode
 o | open the line below the current line, inserting a newline, and enter edit mode
 O | open the line above the current line, inserting a new line, and enter edit mode
 
@@ -151,6 +155,7 @@ invis | toggle partial searching
 hls or hlsearch | highlight all matching phrases
 nohls | turn off highlighting matching phrases
 invhls | toggle highlighting
+cpoptions+=$ | mark the end of an edit with $. (eg `cw` would put a `$` at the end of the current word)
 
 # Command Completion
 in the mini editor you can get a list of commands which match what you have typed so far by typing `Ctrl d`. You can complete your command by typing `<TAB>`.
