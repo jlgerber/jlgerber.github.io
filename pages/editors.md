@@ -21,3 +21,4 @@ I have started playing around with vim again. All of our systems are almost assu
 - [Intermediate](editors/vi/intermediate.html)
 - [Macros](editors/vi/macros.html)
 - [Patterns](editors/vi/patterns.html)
+- [Links](editors/vi/links.html)
