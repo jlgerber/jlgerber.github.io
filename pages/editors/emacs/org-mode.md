@@ -1,9 +1,5 @@
----
-layout: page
-title: Org Mode
-tagline: Best foldy mode ever
-description: Ugly but good.
----
+[return to editors](../../editors.md)
+
 
 Org Mode Basic Usage
 ====================
