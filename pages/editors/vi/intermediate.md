@@ -39,7 +39,7 @@ Command | Effect
 `#s,#ebd` | delete a range of buffers (eg `1,5bd` deletes 1 through 5) (as long as they have not been modified)
 `%db` | delete all the buffers (as long as they have not been modified)
 
-**Note:** Add a `!` to the end of your `bd` command to force delete buffers that have modifications
+**Note:** Add a `!` to the end of your various `bd` commands to force delete buffers that have modifications
 
 # Dealing with Multiple Files
 
