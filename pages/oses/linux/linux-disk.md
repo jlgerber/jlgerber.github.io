@@ -31,7 +31,7 @@ Running the ```mount``` command with no arguments will also show the mounted dev
 
 ##### Manually
 - create directory for mount point
-- run ```mount <device path> <mount dir> (eg mount /dev/hda1 /data)
+- run ```mount <device path> <mount dir> (eg mount /dev/hda1 /data)```
 
 ##### Auto Mounting - /etc/fstab
 Edit /etc/fstab and enter the device and mountpoint
