@@ -1,9 +1,5 @@
----
-layout: page
-title: Howto
-tagline: Learn some new stuff
-description: Emacs extended chords
----
+[return to editors](../../editors.md)
+
 
 Formats
 =======
