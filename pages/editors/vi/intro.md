@@ -31,6 +31,13 @@ Key | Effect
 `ctrl d` | move forward half page
 `ctrl u` | move back half page
 
+## Basic Screen Navigation
+Key | Effect
+--- | ---
+`H` | First line of the screen
+`M` | Middle line of the screen
+`L` | Last line of the screen
+
 ### Advanced Navigation
 
 Key | Effect
@@ -115,6 +122,7 @@ Press `r<char>` to replace the character under the cursor with <char>. Eg `rx` r
 press `Ctrl-g` to get the current file's status
 
 ## Searching and Replacing 
+
 ### Search Command
 In normal mode, press `/` to go into search forward mode. Your cursor will jump to the minieditor and you will be able to type a string to search for and type ENTER. 
 
@@ -128,6 +136,13 @@ To turn off the color highlight, press `:noh`
 In normal mode, press `?` to enter search backwards mode. In backwards mode, `n` advances up the page, and `N` advances down the page - the opposite of '/' search mode.
 
 To go back where you came from, press `<Ctrl-o>`. To go forward again, press `<Ctrl-i>`
+### Search for Current Word
+With your cursor over a word, if you type `*`, you will start searching for the current word. It is as if you went `/` and typed the work name. Sweet.
+
+Of course, if you want to search backwards from the get go, use `#` instead of `*` and `n` will take you backwards...
+
+Both of these searches include word boundaries, so they are exact match searches. If you want to select partials, put a `g` in front of `*` or `#`. Eg `g*`
+
 ### Search for matching (, [, or {
 When programming, the `%` key is essential. It will bounce back and forth between matching `(`, `[` or `{`. 
 
