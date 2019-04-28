@@ -53,9 +53,49 @@ Command | Effect
 
 **Note:** Add a `!` to the end of your various `bd` commands to force delete buffers that have modifications
 
-# Dealing with Multiple Files
+## Splitting Windows
 
-When you launch vim, you can supply it with a list of files, which will end up in its  `args` list. 
+Command | Effect
+--- | ---
+:sp [buffername] | split horizontally. If no buffername is supplied, the current buffer will be split
+:vs [filename] | split vertically. if no filename is supplied, then the currenct buffer will be split
+CTRL-w h j k l | switch to a different buffer dictated by the direction (h j k or l)
+:q | close the currently active split
+[NUM] CTRL-w _ | Set the height to NUM or Max out height of current split if NUM not supplied
+[NUM] CTRL-w \| | Set the width to NUM or Max out width of current split if NUM not supplied
+CTRL-w + | Grow Height by 1 (can be prefixed by count)
+CTRL-w - | Shrink height by 1 (can be prefixed by count)
+CTRL-w > | Shift width right by 1 (can be prefixed by count)
+CTRL-w < | Shift width left by 1 (can be prefixed by count)
+CTRL-w = | Normalize size of all splits
+CTRL-w r | Swap Top / Bottom or Left / Right splits
+CTRL-w T | Break out current  window into new tab
+CTRL-w o | Close every window in the current tabview except this one
+
+## Tabs
+
+Command | Effect
+--- | ---
+:tabn | go to the next tab
+:tabp | go to the previous tab
+:tabfirst | go to the first tab
+:tablast | go to the last tab
+
+#### NOTE: If you use split windows a lot, then you may want to remap your keys to make bouncing between windows
+a single command affair. Here is an example configuration you can put in your .vimrc.
+
+```
+nnoremap <C-J> <C-W><C-J> " Ctrl-j to move down a split
+nnoremap <C-K> <C-W><C-K> " Ctrl-k to move up a split
+nnoremap <C-H> <C-W><C-H> " Ctrl-h to move left a split
+nnoremap <C-L> <C-W><C-L> " Ctrl-l to move right a split
+```
+
+## Loading Multiple Files From the Command Line
+
+When you launch vim, you can supply it with a list of files, which will end up in its  `args` list. The arg list
+is like the buffer list, except that it doesnt support random access. It is effectively a linked list that you
+may go back to the head of at any time.
 
 ## Args List Commands
 
