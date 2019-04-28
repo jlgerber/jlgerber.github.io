@@ -21,6 +21,7 @@ Wnen you list buffers (`:ls`) you get a table with the following columns:
 Command | Effect
 --- | ---
 :ls | list buffers
+:ls! | list all buffers, including unlisted buffers (help buffers are, for example, unlisted buffers)
 :bn or :bnext | advance to the next buffer
 :bf or :bfirst | rewind to the first buffer
 :bp :bprevious | activate previous buffer
