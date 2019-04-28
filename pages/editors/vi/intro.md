@@ -58,5 +58,10 @@ A | move to end of line and enter edit mode
 Press `p` to put the previously deleted text after the cursor. If you delete a line with `dd`, `p` will put the deleted line on the line below the one that the cursor is on now.
 ### Replace command 
 Press `r<char>` to replace the character under the cursor with <char>. Eg `rx` replaces the character under the cursor with `x`. Note that you will be in nav mode after you type the replacement character; you will not be in edit mode.
+ 
  ### Change operator
-  `ce` is the change operator. It deletes the characters under the cursor through the end of the word and puts you into edit mode. for example, to correct `thwf`, navigate to the `w`, press `ce` and then type `is` and <esc> to get out of edit mode.
+  `c` is the change operator. It may be used with motion keys, `w`, `e`, `$`. For example `ce` deletes the characters under the cursor through the end of the word and puts you into edit mode. 
+ 
+ In practice, to correct `thwf`, navigate to the `w`, press `ce` and then type `is` and <esc> to get out of edit mode.
+ 
+ You may also use the `c` motion key with a count, just like `d`
