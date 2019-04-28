@@ -23,13 +23,13 @@ You can switch to a different buffer by typing `:b NUMBER` or ``:b NAME` (or `:b
 ## Buffer Commands
 Command | Effect
 --- | ---
-:ls | list buffers
-:ls! | list all buffers, including unlisted buffers (help buffers are, for example, unlisted buffers)
-:bn or :bnext | advance to the next buffer
-:bf or :bfirst | rewind to the first buffer
-:bp :bprevious | activate previous buffer
-:b NUMBER | switch to the buffer with the number NUMBER (see `:ls`)
-:b NAME | switch to the buffer with the supplied name (tab completion works here)
+`:ls` | list buffers
+`:ls!` | list all buffers, including unlisted buffers (help buffers are, for example, unlisted buffers)
+`:bn` or `:bnext` | advance to the next buffer
+`:bf` or `:bfirst` | rewind to the first buffer
+`:bp` `:bprevious` | activate previous buffer
+`:b NUMBER` | switch to the buffer with the number NUMBER (see `:ls`)
+`:b NAME` | switch to the buffer with the supplied name (tab completion works here)
 `:b#` | switch to the alternate buffer. (again see `:ls`)
 
 # Dealing with Multiple Files
@@ -40,10 +40,10 @@ When you launch vim, you can supply it with a list of files, which will end up i
 
 Command | Effect
 --- | ---
-:n | go to the next file
-:rewind | go back to the start of the args list
-:ar | print the files in the args list with the current file in [brackets]
-:wall | write out all the files in the arg list to disk, saving any changes
+`:n` | go to the next file
+`:rewind` | go back to the start of the args list
+`:ar` | print the files in the args list with the current file in [brackets]
+`:wall` | write out all the files in the arg list to disk, saving any changes
 
 ## Bufdo
 Perform a command or series of commands on all of the buffers
