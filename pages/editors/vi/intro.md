@@ -1,7 +1,8 @@
-# vi
+# vi / vim / gvim / nvim
+
 ## Repeat
 Repeat the last command by typing the `.` character.
-e
+
 ## Basic Character  Navigation
 
 Key | Effect
@@ -51,6 +52,9 @@ G | move to the end of the file
 gg | move to the top of the file
 NUMBER G | move to the line number (number + G, eg 465G to go to line 465)
 :NUMBER | Also move to the line number (eg :456 ENTER goes to line 456)
+`%` | When the cursor is over a { or a ( or a [, pressing `%` will jump to its pair
+`[[` | go to the next outer `{`
+`]]` | go to the previous outer `{`
 
 ### Deleting
 
