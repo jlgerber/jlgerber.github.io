@@ -19,7 +19,8 @@ $ | move to end of line
 ^ | move to first character of first word on line
 G | move to the end of the file
 gg | move to the top of the file
-[number] G | move to the line number (number + G, eg 465G to go to line 465)
+NUMBER G | move to the line number (number + G, eg 465G to go to line 465)
+:NUMBER | Also move to the line number (eg :456 ENTER goes to line 456)
 
 ### Deleting
 
