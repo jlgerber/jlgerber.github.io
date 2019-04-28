@@ -90,6 +90,44 @@ nnoremap <C-K> <C-W><C-K> " Ctrl-k to move up a split
 nnoremap <C-H> <C-W><C-H> " Ctrl-h to move left a split
 nnoremap <C-L> <C-W><C-L> " Ctrl-l to move right a split
 ```
+ 
+## Registers
+You can store data in named registers. By default, Vim uses an unnamed register when saving text. For instance, when you yank text, it goes into an unnamed register, and when you paste text, it comes from an unnamed register, unless you name it. And how do you do that? Prefix the relevant command with `"`.
+For example, to yank the current word into register `a`, do `"ayw`
+The unnamed register may be addressed explicitly as `"`. So to select it you would type `""`.
+
+### The Yank Register
+When we use `y{motion}`, the text is placed, not only in the unnamed register, but in the `yank register` as well. The yank register is named `"0`. The yank register is more reliable than the unnamed register when it comes to yank and paste.
+
+### The Black Hole Register
+You can send data into the void, never to return, by specifying the `"_` register. This is Vim's /dev/null.
+
+### System Clipboard Register
+Vim's plus register (`"+`) references the system clipboard. If we capture text externally into the system clipboard, we can paste it via the `"+p` command (or `CTRL-r +` when in insert mode). 
+
+We can send text to the system clipboard by prefixing the appropriate command with `"+`. For example, to capture the current word and send it to the system clipboard, type `"+yw`.
+
+In X11 there is a second clipboard, called the primary cliboard. It stores middle mouse highlighted selections. We can reference it using `"*`. In Windows and Mac, there is no Primary clipboard, and `+` and `*` may be used interchangably.
+
+### The Expression Register
+registers can be thought of simply as containers that hold a block of text. The expression register, referenced by the = symbol ( quote= ⓘ ), is an exception. When we fetch the contents of the expression register, Vim drops into Command-Line mode, showing an = prompt. We can enter a Vim script expression and then press <CR> to execute it. If the expression returns a string (or a value that can be easily coerced into a string), then Vim uses it. (from Practical Vim: Edit Text at the speed of Thought)
+
+### Read Only Registers
+Vim has a number of read only registers that it sets for us. They are set implicitly. Here is a list
+
+Register | Description
+--- | ---
+`"%` | Name of the current file
+`"#` | Name of the alternate file
+`".` | Last inserted text
+`":` | Last Ex command
+`"/` | Last search command
+
+### Replace a Visual Selection with a Register
+When text is selected in Visual Mode, using `p` replaces the selection with the contents of the specified register (or the implicit register if none is specified).
+
+### Viewing Register Contents
+You can look at an individual register by typing `:reg [NAME]`. Eg `:reg"0`. You can look at all of the registers by typing `:reg`.
 
 ## Loading Multiple Files From the Command Line
 

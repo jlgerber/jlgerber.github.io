@@ -19,4 +19,5 @@ I have started playing around with vim again. All of our systems are almost assu
 
 - [Intro](editors/vi/intro.html)
 - [Intermediate](editors/vi/intermediate.html)
-- [macros](editors/vi/macros.html)
+- [Macros](editors/vi/macros.html)
+- [Patterns](editors/vi/patterns.html)
