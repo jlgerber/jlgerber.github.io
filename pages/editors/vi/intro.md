@@ -100,3 +100,8 @@ Key | Effect
 `:%s/old/new/g` | replace all occurences of `old` with `new` in file
 `"%s/old/new/gc` | replace all occurences of `old` with `new` in file but prompt for each replacement
 
+## Executing a command
+type `:!` plus the command to execute a command in a shell and return the results in a separate buffer.
+
+## Saving a buffer to a file
+Type `:w FILENAME` to save the buffer as FILENAME.
