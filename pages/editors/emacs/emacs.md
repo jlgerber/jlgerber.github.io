@@ -1,75 +1,66 @@
 [return to editors](../../editors.md)
 
----
-layout: page
-title: Emacs
-tagline: The shit
-description: Best editor ever made (sorry vi)
----
 
-Hotkeys
-=======
+# Hotkeys
 
-Bookmarks
----------
+## Bookmarks
 
 bookmarks are set for a file and line in the file. They are persisted to
 disk and you can jump between files and locations.
 
-  Key       Description
-  --------- ------------------
-  C-x r m   Set bookmark
-  C-x r b   Jump to bookmark
-  C-x r l   List Bookmarks
+  Key | Description
+  --- | ---
+  C-x r m |  Set bookmark
+  C-x r b  | Jump to bookmark
+  C-x r l  | List Bookmarks
 
-Font Size
----------
+## Font Size
 
-  key       description
-  --------- ---------------------------
-  C-x C-+   increase buffer font size
-  C-x C--   Decrease buffer font size
-  C-x C-0   reset buffer font size
 
-Imenu
------
+  key | description
+  --- | ---
+  C-x C-+  | increase buffer font size
+  C-x C--  | Decrease buffer font size
+  C-x C-0   |reset buffer font size
+
+## Imenu
 
 Imenu allows you to browse symbols. i have defined the following hotkeys
 
-  key     description
-  ------- ---------------------------------------------
-  C-x c   bring up imenu helm menu for current buffer
+  key  | description
+  ---| ---
+  C-x c |  bring up imenu helm menu for current buffer
 
-Manipulating Word Case
-----------------------
+## Manipulating Word Case
 
-  key   description
-  ----- -------------------------------
-  M-c   Capitalize the following word
-  M-l   Lower case the following word
-  M-u   Uppercase the following word
 
-Navigation
-----------
+  key  | description
+  ---| ---
+  M-c  | Capitalize the following word
+  M-l  | Lower case the following word
+  M-u  | Uppercase the following word
 
-  key      description
-  -------- -----------------------------------------------
-  C-f      Move **forward** one **character**
-  C-b      Move **backward** one **character**
-  M-f      Move **forward** one **word**
-  M-b      Move **backward** one **word**
-  C-e      Move to **end** of **line**
-  C-a      Move to **start** of **line**
-  C-n      Move **down** one **line**
-  C-p      Move **up** one **line**
-  C-v      Move **down** one **window's content**
-  M-v      Move **up** one **window's content**
-  M-&lt;   Move to the **top** of the **buffer**
-  M-&gt;   Move to the **bottom** of the **buffer**
-  C-M-f    Move forward to matching curly brace / parens
-  C-M-b    Move back to matching curyly brace / parens
-  M-}      Move forward to next paragraph
-  M-{      Move backward to previous paragraph
+## Navigation
+
+
+  key  | description
+  --- | ---
+  C-f   |   Move **forward** one **character**
+  C-b    |  Move **backward** one **character**
+  M-f    |  Move **forward** one **word**
+  M-b     | Move **backward** one **word**
+  C-e     | Move to **end** of **line**
+  C-a     | Move to **start** of **line**
+  C-n     | Move **down** one **line**
+  C-p     | Move **up** one **line**
+  C-v     | Move **down** one **window's content**
+  M-v     | Move **up** one **window's content**
+  M-&lt;  | Move to the **top** of the **buffer**
+  M-&gt;  | Move to the **bottom** of the **buffer**
+  C-M-f   | Move forward to matching curly brace / parens
+  C-M-b   | Move back to matching curyly brace / parens
+  M-}     | Move forward to next paragraph
+  M-{     | Move backward to previous paragraph
 
 ### Move Cursor
 
