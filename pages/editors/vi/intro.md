@@ -55,6 +55,6 @@ i | insert text after the cursor
 A | move to end of line and enter edit mode
 
 ### Put command
-Press `p` to put the previously deleted text after the cursor
+Press `p` to put the previously deleted text after the cursor. If you delete a line with `dd`, `p` will put the deleted line on the line below the one that the cursor is on now.
 ### Replace command 
 Press `r<char>` to replace the character under the cursor with <char>. Eg `rx` replaces the character under the cursor with `x`.
