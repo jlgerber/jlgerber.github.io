@@ -1,6 +1,3 @@
-# One Vim to Rule Them All
-How to use a single vim instance? 
-
 # Buffers
 Buffers may be tied to files, but they don't have to be. 
 Wnen you list buffers (`:ls`) you get a table with the following columns:
