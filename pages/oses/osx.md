@@ -5,30 +5,25 @@ tagline: Mac Crack
 description: Favorite Os of the Elite Hipster Programmer with Sticker Festooned Laptop
 ---
 
-Finder
-======
+[return to editors](../../os_specifics.html)
 
-Tags
-----
+# Finder
 
-### if you drag file into a tag, it will apply a flag
+## Tags
 
-### The last button on the top of the finder is the tag button.
-
+If you drag file into a tag, it will apply a flag.
+The last button on the top of the finder is the tag button.
 You can add tags to an item in the finder by hitting the tag button.
 
-Search
-------
+## Search
 
-### Perform Boolean Query
+- Perform Boolean Query
+- use AND, OR, NOT or - (and not)
 
-#### use AND, OR, NOT or - (and not)
+## In the Terminal
 
-terminal
-========
-
-mdfind - search using native spotlight capabilities
----------------------------------------------------
+mdfind : 
+	search using native spotlight capabilities
 
 ### search for files with tags
 
