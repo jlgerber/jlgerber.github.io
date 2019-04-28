@@ -13,3 +13,6 @@ I have finger memories built up around emacs. But it has been quite a while sinc
 - [emacs](editors/emacs/emacs.md)
 - [emacs howto](editors/emacs/howto.md)
 - [org mode](editors/emacs/org-mode.md)
+
+### vim
+- [vim](editors/vi/vim.md)
