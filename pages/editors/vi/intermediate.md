@@ -1,3 +1,5 @@
+[return to editors](../../editors.md)
+
 # Buffers
 Buffers may be tied to files, but they don't have to be. 
 Wnen you list buffers (`:ls`) you get a table with the following columns:
