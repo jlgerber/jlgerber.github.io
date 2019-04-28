@@ -9,7 +9,7 @@ description: A place I store information on topics that interest me
 
 Like all good main pages, this page is simply a link to other pages. Sigh
 
-* [Editors](pags/editors.md)
+* [Editors](pages/editors.md)
 * [Languages](pages/languages.html)
 * [Devops Tools](pages/devops.html)
 * [Production Tools](pages/production_tools.html)
