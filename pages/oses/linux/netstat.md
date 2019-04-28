@@ -3,6 +3,9 @@ layout: page
 title: netstat
 ---
 
+[return to os specifics](../os_specifics.html)
+
+
 ### Netstat
 
 #### Command Flags

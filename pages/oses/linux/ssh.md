@@ -3,6 +3,9 @@ layout: page
 title: ssh
 ---
 
+[return to os specifics](../os_specifics.html)
+
+
 # OpenSSH
 
 ## features

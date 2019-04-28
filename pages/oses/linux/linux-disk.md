@@ -3,6 +3,9 @@ layout: page
 title: linux-disk
 ---
 
+[return to os specifics](../os_specifics.html)
+
+
 ### Disk related commands
 #### Block Devices
 

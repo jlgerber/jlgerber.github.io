@@ -3,6 +3,9 @@ layout: page
 title: logDaemons
 ---
 
+[return to os specifics](../os_specifics.html)
+
+
 # Logging
 
 ### rsyslogd
