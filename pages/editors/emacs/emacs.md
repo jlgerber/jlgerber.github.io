@@ -78,36 +78,34 @@ Registers
 you can store bits of information in registers. I particularly like
 position registers.
 
-  key         description
-  ----------- ------------------------------------------------------------------------
-  C-x r SPC   Store a position in a buffer with a single letter or number as a label
-  C-x r j     Recall a position buffer with a particular label
+  key  |    description
+  --- | ---
+  C-x r SPC  | Store a position in a buffer with a single letter or number as a label
+  C-x r j   |  Recall a position buffer with a particular label
 
-Org Mode
---------
+## Org Mode
+
 
 ### Tables
 
 -   C-x - insert a line under the current one
 
-Elisp
-=====
+# Elisp
 
-general
--------
+
+## general
 
 ### C-h f
 
 get help for the function you are over
 
-eldoc mode
-----------
+### eldoc mode
+
 
 if you enable eldoc mode, you can press space on a function definition
 and get its params in the minibuffer.
 
-debugger
---------
+## debugger
 
 debug-on-error t
 
@@ -115,8 +113,7 @@ debug-on-error t
 
 ### hit 'e' to evaluate any context
 
-e-debug
--------
+## e-debug
 
 interactive debugging is fantastic. You can step through line at a time.
 it is easier than printing
@@ -127,8 +124,8 @@ it is easier than printing
 
 shows keys in debug
 
-commands
---------
+## commands
+
 
 ### are enclosed in parens
 
@@ -144,8 +141,8 @@ commands
 
 ### c-x c
 
-paredit.el
-----------
+### paredit.el
+
 
 good editing helper for elisp
 
