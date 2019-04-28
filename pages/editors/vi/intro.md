@@ -1,3 +1,4 @@
+[return to editors](../../editors.md)
 # vi / vim / gvim / nvim
 
 ## Repeat
