@@ -70,4 +70,13 @@ Press `r<char>` to replace the character under the cursor with <char>. Eg `rx` r
  You may also use the `c` motion key with a count, just like `d`
 
 ## File Status
-press `Ctrl-g` to get the current file's statuse
+press `Ctrl-g` to get the current file's status
+
+## Search Command
+In normal mode, press `/` to go into search mode. Your cursor will jump to the minieditor and you will be able to type a string to search for and type ENTER. 
+
+To search for the next occurence of the string, type `n`.
+
+To search backwarads for the previous occurence of the string, type `N`.
+
+To turn off the color highlight, press `:noh`
