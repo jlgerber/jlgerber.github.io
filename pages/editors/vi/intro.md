@@ -138,5 +138,19 @@ To toggle the value of a setting, prefix it with `inv`. For example `:set invic`
 
 NOTE: if you want to ignore case for one search, just append a `\c` to your search. For example `/foo\c`
 
+### Set Commands
+
+Command | Effect
+--- | ---
+ic 'ignorecase' | ignore case
+noic | turn off ignore case
+invic | toggle ignore case 
+is 'incsearch' |  show partial matches for a search phrase
+nois | turn off partial matches
+invis | toggle partial searching
+hls 'hlsearch' | highlight all matching phrases
+nohls | turn off highlighting matching phrases
+invhls | toggle highlighting
+
 
 
