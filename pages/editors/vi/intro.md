@@ -2,21 +2,41 @@
 ## Repeat
 Repeat the last command by typing the `.` character.
 e
-## Basic navigation
+## Basic Character  Navigation
 
 Key | Effect
 --- | ---
-h | move left one character
-l | move right one character
-j | move down one character
-k | move up one character
+`h` | move left one character
+`l` | move right one character
+`j` | move down one character
+`k` | move up one character
+
+## Basic Word Navigation
+Key | Effect
+--- | ---
+`w` | move right to the first char of the next word. Note that periods, commas, are considered words in their own right.
+`W` | move right to the first char of the next WORD based on whitespace separation. Commas and periods be damned.
+`e` | move right to the end of the word, taking commas and periods into account
+`E` | move right to the end of the word, based on whitespace boundaries
+`b` | move left to the beginning of the word, counting periods and commas, etc as words
+`B` | move left to the beginning of the word, using whitespace as the sole delimiter
+`ge` | move left to the end of the previous word, recognizing period, comma, and sundry other symbols as words
+`gE` | move left to the end of the previous word, considering only whitespace as word delimiter
+
+## Basic Page Navigation
+Key | Effect
+--- | ---
+`Ctrl f` | move forward one whole page
+`Ctrl b` | move back one whole page
+`ctrl d` | move forward half page
+`ctrl u` | move back half page
 
 ### Advanced Navigation
 
 Key | Effect
 --- | ---
-w | move to start of next word
-e | move to end of current word
+`fCHAR` | go to the next occurence of CHAR. `;` repeats the previous search (I know, why not `.`?)
+`tCHAR` | go one left of the next occurence of CHAR. `;` repeats the previous search
 $ | move to end of line
 0 | move to start of line
 ^ | move to first character of first word on line
