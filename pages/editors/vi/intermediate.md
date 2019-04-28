@@ -7,7 +7,7 @@ Wnen you list buffers (:ls) you get a table with the following columns:
 - buffer number
 - buffer code (see :h ls for full detail)
   - % buffer in current window
-  - # The alternate buffer for `:e #` and CTRL-^
+  - `#` The alternate buffer for `:e #` and CTRL-^
   - a active buffer. loaded and visible
   - h hidden buffer. loaded but not displayed in a window
   - - buffer with modifiable off
