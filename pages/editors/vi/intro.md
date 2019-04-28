@@ -142,16 +142,19 @@ NOTE: if you want to ignore case for one search, just append a `\c` to your sear
 
 Command | Effect
 --- | ---
-ic or 'ignorecase' | ignore case
+ic or ignorecase | ignore case
 noic | turn off ignore case
 invic | toggle ignore case 
-is or 'incsearch' |  show partial matches for a search phrase
+is or incsearch |  show partial matches for a search phrase
 nois | turn off partial matches
 invis | toggle partial searching
-hls or 'hlsearch' | highlight all matching phrases
+hls or hlsearch | highlight all matching phrases
 nohls | turn off highlighting matching phrases
 invhls | toggle highlighting
 
 # Command Completion
-in the mini editor you can get a list of commands which match what you have typed so far by typing `Ctrl d`. 
+in the mini editor you can get a list of commands which match what you have typed so far by typing `Ctrl d`. You can complete your command by typing `<TAB>`.
+
+# Opening URLs in Web browser from Vim
+Put your curor over a url and type `gx`
 
