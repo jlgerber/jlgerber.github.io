@@ -73,10 +73,12 @@ Press `r<char>` to replace the character under the cursor with <char>. Eg `rx` r
 press `Ctrl-g` to get the current file's status
 
 ## Search Command
-In normal mode, press `/` to go into search mode. Your cursor will jump to the minieditor and you will be able to type a string to search for and type ENTER. 
+In normal mode, press `/` to go into search forward mode. Your cursor will jump to the minieditor and you will be able to type a string to search for and type ENTER. 
 
 To search for the next occurence of the string, type `n`.
 
 To search backwarads for the previous occurence of the string, type `N`.
 
 To turn off the color highlight, press `:noh`
+
+In normal mode, press `?` to enter search backwards mode. In backwards mode, `n` advances up the page, and `N` advances down the page - the opposite of '/' search mode.
