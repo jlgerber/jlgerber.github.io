@@ -94,3 +94,8 @@ We use the very familiar `:/old/new/` form to replace the first occurence of`old
 
 To replace every occurence of `old` in the line with `new`, type `:s/old/new/g`.
 
+To replace every occurence between two lines, type `l1,l2s/old/new/g` (eg 100,103s/thee/the/g`
+
+To replace every occurence within the whole file, type `%s/old/new/g`.
+
+To replace every occurence within a whole file, but be prompted before each substitution, type `%s/old/new/gc`
