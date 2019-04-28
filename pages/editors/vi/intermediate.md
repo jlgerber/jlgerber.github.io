@@ -36,6 +36,7 @@ Command | Effect
 `:b#` | switch to the alternate buffer. (again see `:ls`)
 `:bd NUMBER [NUMBER...]` | delete one or more buffers by number
 `:bd NAME [NAME...]` | delete one or more buffers by name
+`#s,#ebd` | delete a range of buffers (eg `1,5bd` deletes 1 through 5)
 
 # Dealing with Multiple Files
 
