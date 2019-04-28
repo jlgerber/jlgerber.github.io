@@ -125,6 +125,13 @@ If you highlight lines and type `:w FILENAME`, vi will save the highlighted line
 
 In visual mode, you can, for instance, use `d`, to delete the selected text.
 
+### Visual Block Mode
+You can also enter *visual block mode* which lets you select rectangles of text. Unlike visual marking mode, moving down does not select to the end of the prior line. Instead, you outline a selection block, whose upperleft and lowerright vertices are your starting end ending point (depending upon the direction which you move after entering the mode, this may be start,end or end,start). 
+
+You enter visual block mode by typing `CTRL-v`. If you want to edit all of the line of text that are selected in the block, go ahead and hit `I`, type your changes and hit <ESC>. After hitting <ESC>, your changes will be propagated to every selected line.
+
+Of course, you can also issue other commands
+
 ### Yank command
 
 if you mark text in Visual Marking mode, you can copy it by pressing `y`. This will save it to the buffer. yank may be used as an operator. For example `yw` yanks one word.
