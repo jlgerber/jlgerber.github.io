@@ -40,6 +40,10 @@ I try and update this list from time to time
         - [docs](https://docs.rs/clap/2.33.0/clap/)
         - [repo](https://github.com/clap-rs/clap)
     - [docopt](https://github.com/docopt/docopt.rs)
+- Utilities
+    - [os_type](https://github.com/schultyy/os_type) Find out what os type and version you are on
+- Configuration
+    - [config-rs](https://github.com/mehcode/config-rs) - This crate provides the most featureful config system around. periodd
 - ffi
   - python
     - [rust cpython](https://github.com/dgrunwald/rust-cpython)
