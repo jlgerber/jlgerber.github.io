@@ -33,6 +33,8 @@
       - [login](#login)
       - [remove](#remove)
       - [search](#search)
+
+
 # Ansible
 Ansible is an configuration management framework. Unlike other popular frameworks, it does not run a persistent daemon on each target machine, making it more suitable for deployments than state management. However, it also does not need to be installed on target machines; only on the server from which you will be running playbooks. This server is commonly referred to as the *Ansible Control Server*, although server is a misnomer, as often a lowly laptop plays the role.
 
