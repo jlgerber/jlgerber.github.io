@@ -1,9 +1,9 @@
-### Ansible
+# Ansible
 Ansible is an configuration management framework. Unlike other popular frameworks, it does not run a persistent daemon on each target machine, making it more suitable for deployments than state management. However, it also does not need to be installed on target machines; only on the server from which you will be running playbooks. This server is commonly referred to as the *Ansible Control Server*, although server is a misnomer, as often a lowly laptop plays the role.
 
 The only thing which Ansible truly needs on the target machines are an ssh server and python2.7.
 
-#### Add hoc
+## Add hoc
 Ansible may be run from the command line, specifying an inventory file, a host or hosts from the file, and a module to run directly. EGs. Inventory files are covered later, but at their simplest, they are just a list of machines to operate on.
 
 For example, to ping all the machines in the inventory file:
@@ -14,16 +14,17 @@ And to gather facts on all of the machines:
 ```
 ansible  -i inventory -m setup all
 ```
-###### Passing arguments to modules
+
+## Passing arguments to modules
 You can pass arguments to modules using the ```-a``` flag. Arguments are formated as ```key=value``` pairs, space seprated and all encased in quotes. EG (assuming there is a db2 in the inventory):
 ```
 ansible -i inventory -m setup -a 'filter=ansible_*' db1
 ```
 
-### Inventory Files
+# Inventory Files
 Inventory files are used to describe and group the available machines upon which we would like ansible to run.
 
-#### Inventory File Features
+## Inventory File Features
 - groups
 - groups of groups
 - behavior parameters
@@ -31,13 +32,13 @@ Inventory files are used to describe and group the available machines upon which
 - support for multiple files
 - static/dynamic
 
-###### Machines
+## Machines
 Machines may be set at the top of the inventory, without any grouping. These machines should either be fully qualified, or ahve their ip addresses specified explicitly (which we will see later).
 ```
 web1.company.com
 web2.company.com
 ```
-###### Groups
+## Groups
 Target machines may be grouped together. A group is defined as a list of machine names, one per line, under a group name, encased in *[]*.
 
 For Example,
@@ -49,7 +50,7 @@ db2.company.com
 
 defines two target machines (db1.company.com and db2.company.com) under a db group. You may refer to the *db* group in lieu of a specific host, in a play's *hosts:* key.
 
-##### Groups of Groups
+### Groups of Groups
 
 You can define a group of groups by using the *:children* modifier when defining a parent group name. For example:
 ```
@@ -65,7 +66,7 @@ web2
 dbs
 webs
 ```
-#### Behavior Parameters
+## Behavior Parameters
 Behavior parameters can be set either on individual servers like so:
 ```
 db1 ansible_ssh_user=jlgerber ansible_ssh_pass=foobar
@@ -89,7 +90,7 @@ web1
 db1
 ```
 
-#### Plays, Tasks, Handlers and Playbooks
+## Plays, Tasks, Handlers and Playbooks
 Playbooks contain plays.
 Plays contain tasks
 Tasks call modules.
@@ -98,7 +99,7 @@ Tasks run sequentially
 
 Handlers are triggered by tasksm adn are run once, at the end of plays.
 
-##### Plays
+### Plays
 Each play maps hosts to tasks. A play may have multiple tasks. Plays are generally stored in playbooks. A play is represented in a playbook as a yaml block which starts with a host and defines a block of tasks:
 
 ```
@@ -122,7 +123,7 @@ Plays may declare a number of additional properties. They may declare variables 
     httpd_port: 80
     db_name: yaams
 ```
-##### Tasks
+### Tasks
 Tasks are provided as a list of dictionaries under the ```tasks``` key.
 Each task starts with a ```name:``` parameter, which provides a human readable description of the task.
 Following the name, the module name appears, along with one or more <key>=<value> pairs configuring the module. For example:
@@ -131,7 +132,7 @@ Following the name, the module name appears, along with one or more <key>=<value
   yum: name=http state=present
 ```
 
-##### Modules
+### Modules
 Each task executes a module. Modules are documented on ```docs.ansible.com``` and may be introspected on the command line.
 To get a list of modules:
 ```
@@ -144,7 +145,7 @@ eg
 ansible-doc git
 ```
 
-##### Handlers
+### Handlers
 Handlers look like tasks. They each have a name and a module invocation:
 
 ```
@@ -161,7 +162,7 @@ tasks:
     notify:
       - restart apache
 ```
-##### Playbooks
+### Playbooks
 Playbooks contain one or more plays:
 ```
 ---
@@ -181,7 +182,7 @@ Playbooks contain one or more plays:
     - name: Start mariadb
       service: name=mariadb state=started
 ```
-###### Executing Playbooks
+## Executing Playbooks
 A playbook is executed using the ```ansible-playbook``` command like so:
 ```
 ansible-playbook [-i inventory] <playbook.yml>
@@ -197,7 +198,7 @@ Alternatively, the hostfile may be set in the environment, like so (assuming we 
 ```
 export ANSIBLE_HOSTFILE=inventory
 ```
-###### Dealing with Failures
+## Dealing with Failures
 If a host fails somewhere in a playbook, it is pulled out of the lineup for subsequent plays and tasks. Ansilbe will report it in the recap, along with a flag to supply ansible-playbook in order to retry the failed hosts.
 ```
 PLAY RECAP***********************************
@@ -208,10 +209,10 @@ to retry use:--limit@/home/vagrant/ping.retry
  ansible-playbook myplaybook.yml --limit@/home/vagrant/ping.retry
  ```
 
-#### Roles
-A Role defines a specicic set of tasks to be caried out for a specific subset of the inventory.
+## Roles
+A Role defines a specific set of tasks to be caried out for a specific subset of the inventory.
 
-##### Executing Roles
+### Executing Roles
 A role is executed from a playbook, under the roles key. Here is an example playbook's contents which executes on the webservers group, as defined in an inventory file:
 ```
 ---
@@ -224,7 +225,7 @@ A role is executed from a playbook, under the roles key. Here is an example play
 
 This playbook would be stored in the root of an ansible project.
 
-#### Project Organization - Directory Based
+## Project Organization - Directory Based
 
 A typical decent sized ansible project is made up of a series of directories, under a root:
 
@@ -245,7 +246,7 @@ A typical decent sized ansible project is made up of a series of directories, un
       vars/
         main.yml
 ```
-##### playbooks
+### playbooks
 You can have multiple playbooks but only one playbook will be executed, per your ```ansible-playbook <playbook>.yml``` command. You can aggregate playbooks via the ```include``` directive. For example, given a master playbook, and a couple of secondary playbooks( webserver.yml and dbserver.yml ):
 
 ```
@@ -260,7 +261,7 @@ You can have multiple playbooks but only one playbook will be executed, per your
 - include: dbserver.yml
 ```
 
-##### tasks subdirectories
+### tasks subdirectories
 
 The handlers, templates, and vars directories under ```roles/<rolename>``` are optional; if you dont have any handlers, vars, or templates, you don't have to create them. Just create each directory when needed.
 
@@ -270,24 +271,27 @@ You can break up the tasks by creating additional yml files, and including them 
 - include: snmp.yml
 - include: syslog.yml
 ```
-#### Ansible Galaxy
+
+## Ansible Galaxy
 Ansible hosts a [website](https://galaxy.ansible.com) where users upload and rate roles. It is [well documented here.](http://docs.ansible.com/ansible/latest/galaxy.html#ansible-galaxy).
 
 Ansible galaxy roles may be installed locally using the ```ansible-galaxy``` command.
-##### Commands
-###### delete
+
+# Commands
+
+## delete
 The delete command requires that you first authenticate using the login command. Once authenticated you can remove a role from the Galaxy web site. You are only allowed to remove roles where you have access to the repository in GitHub.
 
-###### import
+## import
 The import command requires that you first authenticate using the login command. Once authenticated you can import any GitHub repository that you own or have been granted access.
 
-###### info
+## info
 Get more infomration about a given role:
 ```
 ansible-galaxy info geerlinggut.elasticsearch
 ```
 
-###### init
+## init
 Use the init command to initialize the base structure of a new role, saving time on creating the various directories and main.yml files a role requires
 
 ```
@@ -312,7 +316,7 @@ vars/
     main.yml
 ```
 
-###### install
+## install
 
 You can install roles from the Galaxy server locally using this subcommand. EG:
 ```
@@ -320,7 +324,8 @@ ansible-galaxy install username.role_name
 eg
 ansible-galaxy install geerlingguy.elasticsearch
 ```
-####### roles_path
+
+### roles_path
 
 By default, Ansible downloads roles to the path specified by the environment variable ANSIBLE_ROLES_PATH. This can be set to a series of directories (i.e. /etc/ansible/roles:~/.ansible/roles), in which case the first writable path will be used. When Ansible is first installed it defaults to /etc/ansible/roles, which requires root privileges.
 
@@ -328,7 +333,8 @@ You can override this by setting the environment variable in your session, defin
 ```
 ansible-galaxy install --roles-path . geerlingguy.apache
 ```
-####### specify a version
+
+### specify a version
 You can specify a version using the following syntax:
 ```
  ansible-galaxy install geerlingguy.apache,v1.0.0
@@ -337,26 +343,27 @@ It’s also possible to point directly to the git repository and specify a branc
 ```
 ansible-galaxy install git+https://github.com/geerlingguy/ansible-role-apache.git,0b7cd353c0250e87a26e0499e59e7fd265cc2f25
 ```
-###### list
+## list
 List installed roles.
 
-###### login
+## login
 Using the ```import```, ```delete``` and ```setup``` commands to manage your roles on the Galaxy website requires authentication, and the login command can be used to do just that. Before you can use the login command, you must create an account on the Galaxy website.
 
-###### remove
+## remove
 Delete a role from somewhere in the role path.
 
-###### search
+## search
 Search for roles on Galaxy. There are a number of tags which modify the search behavior, including ```--author```, ```--galaxy-tags```, and ```--platforms```. Here is a search example:
 ```
  ansible-galaxy search elasticsearch --author geerlingguy
  ```
  The main weakness of this command is that one cannot sort by categories like one can on the website.
 
-###### setup
+## setup
 
-#### Installation Notes
-##### Upgrades on OS X
+### Installation Notes
+
+#### Upgrades on OS X
 I was force to use the following command to upgrade ansible, as a straight ```pip install ansible --upgrade``` threw an exception.
 
 ```
