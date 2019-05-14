@@ -7,19 +7,19 @@
   - [Groups](#groups)
     - [Groups of Groups](#groups-of-groups)
   - [Behavior Parameters](#behavior-parameters)
-  - [Plays, Tasks, Handlers and Playbooks](#plays-tasks-handlers-and-playbooks)
-    - [Plays](#plays)
-    - [Tasks](#tasks)
-    - [Modules](#modules)
-    - [Handlers](#handlers)
-    - [Playbooks](#playbooks)
-  - [Executing Playbooks](#executing-playbooks)
-  - [Dealing with Failures](#dealing-with-failures)
+- [Plays, Tasks, Handlers and Playbooks](#plays-tasks-handlers-and-playbooks)
+  - [Plays](#plays)
+  - [Tasks](#tasks)
+  - [Modules](#modules)
+  - [Handlers](#handlers)
+  - [Playbooks](#playbooks)
+    - [Executing Playbooks](#executing-playbooks)
+    - [Dealing with Failures](#dealing-with-failures)
   - [Roles](#roles)
     - [Executing Roles](#executing-roles)
   - [Project Organization - Directory Based](#project-organization---directory-based)
-    - [playbooks](#playbooks)
-    - [tasks subdirectories](#tasks-subdirectories)
+  - [playbooks](#playbooks)
+  - [tasks subdirectories](#tasks-subdirectories)
   - [Ansible Galaxy](#ansible-galaxy)
     - [Commands](#commands)
       - [delete](#delete)
@@ -125,7 +125,7 @@ web1
 db1
 ```
 
-## Plays, Tasks, Handlers and Playbooks
+# Plays, Tasks, Handlers and Playbooks
 Playbooks contain plays.
 Plays contain tasks
 Tasks call modules.
@@ -134,7 +134,7 @@ Tasks run sequentially
 
 Handlers are triggered by tasksm adn are run once, at the end of plays.
 
-### Plays
+## Plays
 Each play maps hosts to tasks. A play may have multiple tasks. Plays are generally stored in playbooks. A play is represented in a playbook as a yaml block which starts with a host and defines a block of tasks:
 
 ```
@@ -158,7 +158,7 @@ Plays may declare a number of additional properties. They may declare variables 
     httpd_port: 80
     db_name: yaams
 ```
-### Tasks
+## Tasks
 Tasks are provided as a list of dictionaries under the ```tasks``` key.
 Each task starts with a ```name:``` parameter, which provides a human readable description of the task.
 Following the name, the module name appears, along with one or more <key>=<value> pairs configuring the module. For example:
@@ -167,7 +167,7 @@ Following the name, the module name appears, along with one or more <key>=<value
   yum: name=http state=present
 ```
 
-### Modules
+## Modules
 Each task executes a module. Modules are documented on ```docs.ansible.com``` and may be introspected on the command line.
 To get a list of modules:
 ```
@@ -180,7 +180,7 @@ eg
 ansible-doc git
 ```
 
-### Handlers
+## Handlers
 Handlers look like tasks. They each have a name and a module invocation:
 
 ```
@@ -197,7 +197,7 @@ tasks:
     notify:
       - restart apache
 ```
-### Playbooks
+## Playbooks
 Playbooks contain one or more plays:
 ```
 ---
@@ -217,7 +217,7 @@ Playbooks contain one or more plays:
     - name: Start mariadb
       service: name=mariadb state=started
 ```
-## Executing Playbooks
+### Executing Playbooks
 A playbook is executed using the ```ansible-playbook``` command like so:
 ```
 ansible-playbook [-i inventory] <playbook.yml>
@@ -233,7 +233,7 @@ Alternatively, the hostfile may be set in the environment, like so (assuming we 
 ```
 export ANSIBLE_HOSTFILE=inventory
 ```
-## Dealing with Failures
+### Dealing with Failures
 If a host fails somewhere in a playbook, it is pulled out of the lineup for subsequent plays and tasks. Ansilbe will report it in the recap, along with a flag to supply ansible-playbook in order to retry the failed hosts.
 ```
 PLAY RECAP***********************************
@@ -281,7 +281,7 @@ A typical decent sized ansible project is made up of a series of directories, un
       vars/
         main.yml
 ```
-### playbooks
+## playbooks
 You can have multiple playbooks but only one playbook will be executed, per your ```ansible-playbook <playbook>.yml``` command. You can aggregate playbooks via the ```include``` directive. For example, given a master playbook, and a couple of secondary playbooks( webserver.yml and dbserver.yml ):
 
 ```
@@ -296,7 +296,7 @@ You can have multiple playbooks but only one playbook will be executed, per your
 - include: dbserver.yml
 ```
 
-### tasks subdirectories
+## tasks subdirectories
 
 The handlers, templates, and vars directories under ```roles/<rolename>``` are optional; if you dont have any handlers, vars, or templates, you don't have to create them. Just create each directory when needed.
 
