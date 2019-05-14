@@ -21,18 +21,18 @@
     - [playbooks](#playbooks)
     - [tasks subdirectories](#tasks-subdirectories)
   - [Ansible Galaxy](#ansible-galaxy)
-- [Commands](#commands)
-  - [delete](#delete)
-  - [import](#import)
-  - [info](#info)
-  - [init](#init)
-  - [install](#install)
-    - [roles_path](#rolespath)
-    - [specify a version](#specify-a-version)
-  - [list](#list)
-  - [login](#login)
-  - [remove](#remove)
-  - [search](#search)
+    - [Commands](#commands)
+      - [delete](#delete)
+      - [import](#import)
+      - [info](#info)
+      - [init](#init)
+      - [install](#install)
+          - [roles_path](#rolespath)
+          - [specify a version](#specify-a-version)
+      - [list](#list)
+      - [login](#login)
+      - [remove](#remove)
+      - [search](#search)
 # Ansible
 Ansible is an configuration management framework. Unlike other popular frameworks, it does not run a persistent daemon on each target machine, making it more suitable for deployments than state management. However, it also does not need to be installed on target machines; only on the server from which you will be running playbooks. This server is commonly referred to as the *Ansible Control Server*, although server is a misnomer, as often a lowly laptop plays the role.
 
@@ -312,21 +312,21 @@ Ansible hosts a [website](https://galaxy.ansible.com) where users upload and rat
 
 Ansible galaxy roles may be installed locally using the ```ansible-galaxy``` command.
 
-# Commands
+### Commands
 
-## delete
+#### delete
 The delete command requires that you first authenticate using the login command. Once authenticated you can remove a role from the Galaxy web site. You are only allowed to remove roles where you have access to the repository in GitHub.
 
-## import
+#### import
 The import command requires that you first authenticate using the login command. Once authenticated you can import any GitHub repository that you own or have been granted access.
 
-## info
+#### info
 Get more infomration about a given role:
 ```
 ansible-galaxy info geerlinggut.elasticsearch
 ```
 
-## init
+#### init
 Use the init command to initialize the base structure of a new role, saving time on creating the various directories and main.yml files a role requires
 
 ```
@@ -351,7 +351,7 @@ vars/
     main.yml
 ```
 
-## install
+#### install
 
 You can install roles from the Galaxy server locally using this subcommand. EG:
 ```
@@ -360,7 +360,7 @@ eg
 ansible-galaxy install geerlingguy.elasticsearch
 ```
 
-### roles_path
+###### roles_path
 
 By default, Ansible downloads roles to the path specified by the environment variable ANSIBLE_ROLES_PATH. This can be set to a series of directories (i.e. /etc/ansible/roles:~/.ansible/roles), in which case the first writable path will be used. When Ansible is first installed it defaults to /etc/ansible/roles, which requires root privileges.
 
@@ -369,7 +369,7 @@ You can override this by setting the environment variable in your session, defin
 ansible-galaxy install --roles-path . geerlingguy.apache
 ```
 
-### specify a version
+###### specify a version
 You can specify a version using the following syntax:
 ```
  ansible-galaxy install geerlingguy.apache,v1.0.0
@@ -378,16 +378,16 @@ It’s also possible to point directly to the git repository and specify a branc
 ```
 ansible-galaxy install git+https://github.com/geerlingguy/ansible-role-apache.git,0b7cd353c0250e87a26e0499e59e7fd265cc2f25
 ```
-## list
+#### list
 List installed roles.
 
-## login
+#### login
 Using the ```import```, ```delete``` and ```setup``` commands to manage your roles on the Galaxy website requires authentication, and the login command can be used to do just that. Before you can use the login command, you must create an account on the Galaxy website.
 
-## remove
+#### remove
 Delete a role from somewhere in the role path.
 
-## search
+#### search
 Search for roles on Galaxy. There are a number of tags which modify the search behavior, including ```--author```, ```--galaxy-tags```, and ```--platforms```. Here is a search example:
 ```
  ansible-galaxy search elasticsearch --author geerlingguy
