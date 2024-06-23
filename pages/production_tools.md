@@ -8,11 +8,16 @@ description: Professional fun
 From Maya to Houdini to Nuke, apis abound, both c++ and python. Additionally, we have production environment construction to consider.
 
 ### REZ
+
 Rez is a build / env system for software
 
 - [configuring rez](production_tools/rez/configuring_rez.html)
 - [notes](production_tools/rez/notes.html)
 
+### USD
+
+- [solaris](production_tools/usd/solaris/index.html)
+  
 ### 2D
 
 ### 3D
